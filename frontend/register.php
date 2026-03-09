@@ -210,13 +210,13 @@ $title = "Register - FloodGuard Jakarta";
 <body>
     <div class="auth-container">
         <a href="../index.php" class="back-home">
-            <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            <i class="fas fa-arrow-left"></i> Back to Home
         </a>
         
         <div class="auth-card">
             <div class="auth-header">
                 <h1><i class="fas fa-shield-alt"></i> FloodGuard</h1>
-                <p>Daftar akun baru</p>
+                <p>Register a new account</p>
             </div>
             
             <div class="auth-body">
@@ -225,13 +225,13 @@ $title = "Register - FloodGuard Jakarta";
                 <form id="registerForm">
                     <div class="form-group">
                         <label for="full_name">
-                            <i class="fas fa-id-card"></i> Nama Lengkap
+                            <i class="fas fa-id-card"></i> Full Name
                         </label>
                         <input 
                             type="text" 
                             id="full_name" 
                             name="full_name" 
-                            placeholder="Contoh: John Doe"
+                            placeholder="Example: John Doe"
                             required
                         >
                     </div>
@@ -244,7 +244,7 @@ $title = "Register - FloodGuard Jakarta";
                             type="text" 
                             id="username" 
                             name="username" 
-                            placeholder="Contoh: johndoe"
+                            placeholder="Example: johndoe"
                             required
                             autocomplete="username"
                         >
@@ -258,7 +258,7 @@ $title = "Register - FloodGuard Jakarta";
                             type="email" 
                             id="email" 
                             name="email" 
-                            placeholder="Contoh: john@example.com"
+                            placeholder="Example: john@example.com"
                             required
                             autocomplete="email"
                         >
@@ -266,13 +266,13 @@ $title = "Register - FloodGuard Jakarta";
                     
                     <div class="form-group">
                         <label for="phone">
-                            <i class="fas fa-phone"></i> No. Telepon (Opsional)
+                            <i class="fas fa-phone"></i> No. Telephone (Optional)
                         </label>
                         <input 
                             type="tel" 
                             id="phone" 
                             name="phone" 
-                            placeholder="Contoh: 081234567890"
+                            placeholder="Example: 081234567890"
                             autocomplete="tel"
                         >
                     </div>
@@ -286,7 +286,7 @@ $title = "Register - FloodGuard Jakarta";
                                 type="password" 
                                 id="password" 
                                 name="password" 
-                                placeholder="Minimal 6 karakter"
+                                placeholder="Minimum 6 Characters"
                                 required
                                 autocomplete="new-password"
                             >
@@ -301,13 +301,13 @@ $title = "Register - FloodGuard Jakarta";
                     </div>
                     
                     <button type="submit" class="btn-auth" id="registerBtn">
-                        <i class="fas fa-user-plus"></i> Daftar
+                        <i class="fas fa-user-plus"></i> Register
                     </button>
                 </form>
             </div>
             
             <div class="auth-footer">
-                Sudah punya akun? <a href="login.php">Masuk di sini</a>
+                Already have an account? <a href="login.php">Login here</a>
             </div>
         </div>
     </div>
@@ -387,18 +387,18 @@ $title = "Register - FloodGuard Jakarta";
             
             // Validate
             if (!data.full_name || !data.username || !data.email || !data.password) {
-                showAlert('Mohon isi semua field yang wajib', 'error');
+                showAlert('Please fill in all required fields', 'error');
                 return;
             }
             
             if (data.password.length < 6) {
-                showAlert('Password minimal 6 karakter', 'error');
+                showAlert('Password must be at least 6 characters long', 'error');
                 return;
             }
             
             // Disable button
             registerBtn.disabled = true;
-            registerBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mendaftar...';
+            registerBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Register...';
             
             try {
                 const response = await fetch('../backend/api/auth.php?action=register', {
@@ -412,19 +412,19 @@ $title = "Register - FloodGuard Jakarta";
                 const result = await response.json();
                 
                 if (result.success) {
-                    showAlert('Registrasi berhasil! Mengalihkan...', 'success');
+                    showAlert('Registration successful! Redirecting...', 'success');
                     setTimeout(() => {
                         window.location.href = 'dashboard.php';
                     }, 1500);
                 } else {
-                    showAlert(result.error || 'Registrasi gagal', 'error');
+                    showAlert(result.error || 'Registration failed', 'error');
                     registerBtn.disabled = false;
                     registerBtn.innerHTML = '<i class="fas fa-user-plus"></i> Daftar';
                 }
                 
             } catch (error) {
                 console.error('Register error:', error);
-                showAlert('Terjadi kesalahan koneksi', 'error');
+                showAlert('An error occurred while connecting to the server', 'error');
                 registerBtn.disabled = false;
                 registerBtn.innerHTML = '<i class="fas fa-user-plus"></i> Daftar';
             }

@@ -12,7 +12,7 @@ $username = $_SESSION['username'];
 $email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -466,9 +466,9 @@ $email = $_SESSION['email'];
                 <span>FloodGuard</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.php">Beranda</a></li>
-                <li><a href="prediksi.php">Prediksi Banjir</a></li>
-                <li><a href="peta.php">Peta</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="prediksi.php">Flood Prediction</a></li>
+                <li><a href="peta.php">Map</a></li>
                 <li><a href="dashboard.php" class="active">Dashboard</a></li>
                 <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
@@ -483,12 +483,12 @@ $email = $_SESSION['email'];
         <div class="dashboard-header">
             <div class="container">
                 <div class="user-info">
-                    <h2><i class="fas fa-user-circle"></i> Selamat Datang, <?= htmlspecialchars($user_name) ?>!</h2>
+                    <h2><i class="fas fa-user-circle"></i> Welcome, <?= htmlspecialchars($user_name) ?>!</h2>
                     <p><i class="fas fa-envelope"></i> <?= htmlspecialchars($email) ?> | <i class="fas fa-at"></i> <?= htmlspecialchars($username) ?></p>
                 </div>
                 <div class="dashboard-nav">
-                    <a href="prediksi.php"><i class="fas fa-cloud-rain"></i> Prediksi Baru</a>
-                    <a href="peta.php"><i class="fas fa-map"></i> Lihat Peta</a>
+                    <a href="prediksi.php"><i class="fas fa-cloud-rain"></i> New Prediction</a>
+                    <a href="peta.php"><i class="fas fa-map"></i> View Map</a>
                 </div>
             </div>
         </div>
@@ -504,7 +504,7 @@ $email = $_SESSION['email'];
                         </div>
                         <div class="stat-info">
                             <h3 id="totalPredictions">0</h3>
-                            <p>Total Prediksi</p>
+                            <p>Total Predictions</p>
                         </div>
                     </div>
                     
@@ -514,7 +514,7 @@ $email = $_SESSION['email'];
                         </div>
                         <div class="stat-info">
                             <h3 id="highRiskCount">0</h3>
-                            <p>Risiko Tinggi</p>
+                            <p>High Risk</p>
                         </div>
                     </div>
                     
@@ -524,7 +524,7 @@ $email = $_SESSION['email'];
                         </div>
                         <div class="stat-info">
                             <h3 id="lowRiskCount">0</h3>
-                            <p>Risiko Rendah</p>
+                            <p>Low Risk</p>
                         </div>
                     </div>
                     
@@ -534,7 +534,7 @@ $email = $_SESSION['email'];
                         </div>
                         <div class="stat-info">
                             <h3 id="lastPrediction">-</h3>
-                            <p>Prediksi Terakhir</p>
+                            <p>Last Prediction</p>
                         </div>
                     </div>
                 </div>
@@ -542,25 +542,25 @@ $email = $_SESSION['email'];
                 <!-- History Section -->
                 <div class="history-section">
                     <div class="history-header">
-                        <h3><i class="fas fa-history"></i> Riwayat Prediksi</h3>
+                        <h3><i class="fas fa-history"></i> Prediction History</h3>
                         <div class="filter-buttons">
-                            <button class="filter-btn active" data-filter="all">Semua</button>
-                            <button class="filter-btn" data-filter="Low">Rendah</button>
-                            <button class="filter-btn" data-filter="Medium">Sedang</button>
-                            <button class="filter-btn" data-filter="High">Tinggi</button>
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="Low">Low</button>
+                            <button class="filter-btn" data-filter="Medium">Medium</button>
+                            <button class="filter-btn" data-filter="High">High</button>
                         </div>
                     </div>
 
                     <div id="historyContent">
                         <div class="loading">
                             <i class="fas fa-spinner"></i>
-                            <p>Memuat data...</p>
+                            <p>Loading data...</p>
                         </div>
                     </div>
 
                     <div class="pagination" id="pagination" style="display: none;">
-                        <button id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Sebelumnya</button>
-                        <button id="nextBtn"><i class="fas fa-chevron-right"></i> Selanjutnya</button>
+                        <button id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                        <button id="nextBtn"><i class="fas fa-chevron-right"></i> Next</button>
                     </div>
                 </div>
             </div>
@@ -570,7 +570,7 @@ $email = $_SESSION['email'];
     <div id="downloadModal" class="modal">
         <div class="download-modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-download"></i> Pilih Format Download</h3>
+                <h3><i class="fas fa-download"></i> Choose Download Format</h3>
                 <button class="modal-close" onclick="closeDownloadModal()">&times;</button>
             </div>
             <div class="download-options">
@@ -578,14 +578,14 @@ $email = $_SESSION['email'];
                     <i class="fas fa-file-code"></i>
                     <div class="download-option-info">
                         <strong>Download JSON</strong>
-                        <small>Format data untuk developer</small>
+                        <small>Data format for developers</small>
                     </div>
                 </button>
                 <button class="download-option-btn" onclick="downloadAsPDF()">
                     <i class="fas fa-file-pdf"></i>
                     <div class="download-option-info">
                         <strong>Download PDF</strong>
-                        <small>Format dokumen siap cetak</small>
+                        <small>Print-ready document format</small>
                     </div>
                 </button>
             </div>
@@ -595,7 +595,7 @@ $email = $_SESSION['email'];
     <div id="detailModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-info-circle"></i> Detail Prediksi</h3>
+                <h3><i class="fas fa-info-circle"></i> Prediction Details</h3>
                 <button class="modal-close" onclick="closeModal()">&times;</button>
             </div>
             <div id="modalBody"></div>
@@ -645,7 +645,7 @@ $email = $_SESSION['email'];
                     if (predictions.length > 0) {
                         const lastDate = new Date(predictions[0].created_at);
                         const options = { day: 'numeric', month: 'short' };
-                        document.getElementById('lastPrediction').textContent = lastDate.toLocaleDateString('id-ID', options);
+                        document.getElementById('lastPrediction').textContent = lastDate.toLocaleDateString('en-US', options);
                     }
                 }
             } catch (error) {
@@ -656,7 +656,7 @@ $email = $_SESSION['email'];
         // Load history
         async function loadHistory() {
             const historyContent = document.getElementById('historyContent');
-            historyContent.innerHTML = '<div class="loading"><i class="fas fa-spinner"></i><p>Memuat data...</p></div>';
+            historyContent.innerHTML = '<div class="loading"><i class="fas fa-spinner"></i><p>Loading data...</p></div>';
 
             try {
                 const offset = currentPage * limit;
@@ -675,10 +675,10 @@ $email = $_SESSION['email'];
                         historyContent.innerHTML = `
                             <div class="empty-state">
                                 <i class="fas fa-inbox"></i>
-                                <h3>Belum Ada Riwayat</h3>
-                                <p>Mulai prediksi pertama Anda sekarang!</p>
+                                <h3>No History Yet</h3>
+                                <p>Start your first prediction now!</p>
                                 <a href="prediksi.php" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">
-                                    <i class="fas fa-cloud-rain"></i> Prediksi Sekarang
+                                    <i class="fas fa-cloud-rain"></i> Predict Now
                                 </a>
                             </div>
                         `;
@@ -688,19 +688,19 @@ $email = $_SESSION['email'];
                             <table class="history-table">
                                 <thead>
                                     <tr>
-                                        <th>Tanggal</th>
-                                        <th>Risiko</th>
-                                        <th>Probabilitas</th>
-                                        <th>Curah Hujan</th>
-                                        <th>Kelembaban</th>
-                                        <th>Aksi</th>
+                                        <th>Date</th>
+                                        <th>Risk</th>
+                                        <th>Probability</th>
+                                        <th>Rainfall</th>
+                                        <th>Humidity</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                         `;
 
                         predictions.forEach(pred => {
-                            const date = new Date(pred.created_at).toLocaleString('id-ID');
+                            const date = new Date(pred.created_at).toLocaleString('en-US');
                             const badgeClass = pred.risk_level === 'High' ? 'badge-high' : pred.risk_level === 'Medium' ? 'badge-medium' : 'badge-low';
                             
                             tableHTML += `
@@ -712,13 +712,13 @@ $email = $_SESSION['email'];
                                 <td>${pred.humidity}%</td>
                                 <td>
                                     <div class="action-buttons">
-                                        <button class="btn-view" onclick="viewDetail(${pred.id})" title="Lihat Detail">
+                                        <button class="btn-view" onclick="viewDetail(${pred.id})" title="View Details">
                                             <i class="fas fa-eye"></i>
                                         </button>
                                         <button class="btn-download" onclick="downloadOptions(${pred.id})" title="Download">
                                             <i class="fas fa-download"></i>
                                         </button>
-                                        <button class="btn-delete" onclick="deletePredict(${pred.id})" title="Hapus">
+                                        <button class="btn-delete" onclick="deletePredict(${pred.id})" title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </div>
@@ -741,8 +741,8 @@ $email = $_SESSION['email'];
                 historyContent.innerHTML = `
                     <div class="empty-state">
                         <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Gagal Memuat Data</h3>
-                        <p>Terjadi kesalahan. Silakan refresh halaman.</p>
+                        <h3>Failed to Load Data</h3>
+                        <p>An error occurred. Please refresh the page.</p>
                     </div>
                 `;
             }
@@ -771,7 +771,7 @@ $email = $_SESSION['email'];
                     const prediction = result.predictions.find(p => p.id === id);
                     
                     if (prediction) {
-                        const date = new Date(prediction.created_at).toLocaleString('id-ID');
+                        const date = new Date(prediction.created_at).toLocaleString('en-US');
                         const badgeClass = prediction.risk_level === 'High' ? 'badge-high' : prediction.risk_level === 'Medium' ? 'badge-medium' : 'badge-low';
                         
                         document.getElementById('modalBody').innerHTML = `
@@ -783,35 +783,35 @@ $email = $_SESSION['email'];
                             
                             <div class="detail-grid">
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-cloud-rain"></i> Curah Hujan</strong>
+                                    <strong><i class="fas fa-cloud-rain"></i> Rainfall</strong>
                                     <span>${prediction.rainfall} mm</span>
                                 </div>
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-tint"></i> Kelembaban</strong>
+                                    <strong><i class="fas fa-tint"></i> Humidity</strong>
                                     <span>${prediction.humidity}%</span>
                                 </div>
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-thermometer-half"></i> Suhu Rata-rata</strong>
+                                    <strong><i class="fas fa-thermometer-half"></i> Avg Temperature</strong>
                                     <span>${prediction.temp_avg}°C</span>
                                 </div>
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-temperature-low"></i> Suhu Min</strong>
+                                    <strong><i class="fas fa-temperature-low"></i> Min Temp</strong>
                                     <span>${prediction.temp_min}°C</span>
                                 </div>
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-temperature-high"></i> Suhu Max</strong>
+                                    <strong><i class="fas fa-temperature-high"></i> Max Temp</strong>
                                     <span>${prediction.temp_max}°C</span>
                                 </div>
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-sun"></i> Sinar Matahari</strong>
-                                    <span>${prediction.sunshine} jam</span>
+                                    <strong><i class="fas fa-sun"></i> Sunshine</strong>
+                                    <span>${prediction.sunshine} hours</span>
                                 </div>
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-wind"></i> Angin Max</strong>
+                                    <strong><i class="fas fa-wind"></i> Max Wind</strong>
                                     <span>${prediction.wind_max} m/s</span>
                                 </div>
                                 <div class="detail-item">
-                                    <strong><i class="fas fa-wind"></i> Angin Rata-rata</strong>
+                                    <strong><i class="fas fa-wind"></i> Avg Wind</strong>
                                     <span>${prediction.wind_avg} m/s</span>
                                 </div>
                             </div>
@@ -827,7 +827,7 @@ $email = $_SESSION['email'];
 
         // Delete prediction
         window.deletePredict = async function(id) {
-            if (!confirm('Yakin ingin menghapus prediksi ini?')) return;
+            if (!confirm('Are you sure you want to delete this prediction?')) return;
 
             try {
                 const response = await fetch('../backend/api/predictions_history.php', {
@@ -841,13 +841,13 @@ $email = $_SESSION['email'];
                 if (result.success) {
                     loadHistory();
                     loadStats();
-                    alert('Prediksi berhasil dihapus');
+                    alert('Prediction successfully deleted');
                 } else {
-                    alert('Gagal menghapus prediksi');
+                    alert('Failed to delete prediction');
                 }
             } catch (error) {
                 console.error('Error deleting:', error);
-                alert('Terjadi kesalahan');
+                alert('An error occurred');
             }
         }
 
@@ -860,7 +860,7 @@ $email = $_SESSION['email'];
         document.getElementById('logoutBtn').addEventListener('click', async function(e) {
             e.preventDefault();
             
-            if (!confirm('Yakin ingin logout?')) return;
+            if (!confirm('Are you sure you want to logout?')) return;
 
             try {
                 const response = await fetch('../backend/api/auth.php?action=logout', {
@@ -870,11 +870,11 @@ $email = $_SESSION['email'];
                 const result = await response.json();
 
                 if (result.success) {
-                    window.location.href = '../index.php';  // ← GANTI KE index.php
+                    window.location.href = '../index.php';
                 }
             } catch (error) {
                 console.error('Logout error:', error);
-                window.location.href = '../index.php';  // ← GANTI KE index.php
+                window.location.href = '../index.php';
             }
         });
         // Store selected prediction ID for download
@@ -949,12 +949,12 @@ window.downloadAsJSON = async function() {
                 URL.revokeObjectURL(url);
                 
                 closeDownloadModal();
-                alert('✓ File JSON berhasil didownload!');
+                alert('✓ JSON file downloaded successfully!');
             }
         }
     } catch (error) {
         console.error('Download JSON error:', error);
-        alert('Gagal mendownload JSON');
+        alert('Failed to download JSON');
     }
 }
 
@@ -971,7 +971,7 @@ window.downloadAsPDF = async function() {
             
             if (prediction) {
                 // Create PDF content
-                const date = new Date(prediction.created_at).toLocaleString('id-ID');
+                const date = new Date(prediction.created_at).toLocaleString('en-US');
                 const riskColor = prediction.risk_level === 'High' ? '#ef4444' : 
                                  prediction.risk_level === 'Medium' ? '#f59e0b' : '#10b981';
                 
@@ -981,7 +981,7 @@ window.downloadAsPDF = async function() {
                 <html>
                 <head>
                     <meta charset="UTF-8">
-                    <title>FloodGuard - Laporan Prediksi Banjir</title>
+                    <title>FloodGuard - Flood Prediction Report</title>
                     <style>
                         body {
                             font-family: Arial, sans-serif;
@@ -1064,73 +1064,73 @@ window.downloadAsPDF = async function() {
                 <body>
                     <div class="header">
                         <h1>🌊 FloodGuard Jakarta</h1>
-                        <p>Laporan Prediksi Risiko Banjir</p>
-                        <p>ID Prediksi: #${prediction.id} | ${date}</p>
+                        <p>Flood Risk Prediction Report</p>
+                        <p>Prediction ID: #${prediction.id} | ${date}</p>
                     </div>
                     
                     <div class="risk-box">
                         <h2>${(prediction.probability * 100).toFixed(1)}%</h2>
-                        <p>Risiko: ${prediction.risk_level}</p>
+                        <p>Risk: ${prediction.risk_level}</p>
                     </div>
                     
                     <div class="data-section">
-                        <h3>📊 Data Cuaca</h3>
+                        <h3>📊 Weather Data</h3>
                         <div class="data-grid">
                             <div class="data-item">
-                                <strong>☔ Curah Hujan</strong>
+                                <strong>☔ Rainfall</strong>
                                 <span>${prediction.rainfall} mm</span>
                             </div>
                             <div class="data-item">
-                                <strong>💧 Kelembaban</strong>
+                                <strong>💧 Humidity</strong>
                                 <span>${prediction.humidity}%</span>
                             </div>
                             <div class="data-item">
-                                <strong>🌡️ Suhu Rata-rata</strong>
+                                <strong>🌡️ Average Temperature</strong>
                                 <span>${prediction.temp_avg}°C</span>
                             </div>
                             <div class="data-item">
-                                <strong>🌡️ Suhu Minimum</strong>
+                                <strong>🌡️ Minimum Temperature</strong>
                                 <span>${prediction.temp_min}°C</span>
                             </div>
                             <div class="data-item">
-                                <strong>🌡️ Suhu Maximum</strong>
+                                <strong>🌡️ Maximum Temperature</strong>
                                 <span>${prediction.temp_max}°C</span>
                             </div>
                             <div class="data-item">
-                                <strong>☀️ Sinar Matahari</strong>
-                                <span>${prediction.sunshine} jam</span>
+                                <strong>☀️ Sunshine</strong>
+                                <span>${prediction.sunshine} hours</span>
                             </div>
                             <div class="data-item">
-                                <strong>💨 Angin Maximum</strong>
+                                <strong>💨 Maximum Wind</strong>
                                 <span>${prediction.wind_max} m/s</span>
                             </div>
                             <div class="data-item">
-                                <strong>💨 Angin Rata-rata</strong>
+                                <strong>💨 Average Wind</strong>
                                 <span>${prediction.wind_avg} m/s</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="data-section">
-                        <h3>🤖 Informasi Model</h3>
+                        <h3>🤖 Model Information</h3>
                         <div class="data-item">
-                            <strong>Model Machine Learning</strong>
+                            <strong>Machine Learning Model</strong>
                             <span>Random Forest Classifier</span>
                         </div>
                         <div class="data-item" style="margin-top: 10px;">
-                            <strong>Akurasi Model</strong>
+                            <strong>Model Accuracy</strong>
                             <span>88.49%</span>
                         </div>
                         <div class="data-item" style="margin-top: 10px;">
-                            <strong>Dataset Training</strong>
-                            <span>6,308 data BMKG (2016-2020)</span>
+                            <strong>Training Dataset</strong>
+                            <span>6,308 BMKG data points (2016-2020)</span>
                         </div>
                     </div>
                     
                     <div class="footer">
-                        <p><strong>FloodGuard Jakarta</strong> - Sistem Prediksi Banjir Berbasis AI</p>
-                        <p>Dikembangkan untuk PROX x CORIS 2026</p>
-                        <p>Dokumen digenerate otomatis pada ${new Date().toLocaleString('id-ID')}</p>
+                        <p><strong>FloodGuard Jakarta</strong> - AI-Based Flood Prediction System</p>
+                        <p>Developed for PROX x CORIS 2026</p>
+                        <p>Document generated automatically on ${new Date().toLocaleString('en-US')}</p>
                     </div>
                 </body>
                 </html>
@@ -1147,12 +1147,12 @@ window.downloadAsPDF = async function() {
                 }, 500);
                 
                 closeDownloadModal();
-                alert('✓ Jendela print PDF telah dibuka! Pilih "Save as PDF" di printer options.');
+                alert('✓ PDF print window opened! Select "Save as PDF" in printer options.');
             }
         }
     } catch (error) {
         console.error('Download PDF error:', error);
-        alert('Gagal mendownload PDF');
+        alert('Failed to download PDF');
     }
 }
 

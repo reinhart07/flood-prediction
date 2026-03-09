@@ -61,13 +61,13 @@ async function sendMessage() {
         if (data.success) {
             addMessage(data.response, 'bot');
         } else {
-            addMessage('Maaf, saya mengalami kesulitan. Silakan coba lagi.', 'bot');
+            addMessage('Sorry, I\'m having difficulties. Please try again.', 'bot');
         }
         
     } catch (error) {
         console.error('Chatbot error:', error);
         removeTypingIndicator(typingId);
-        addMessage('Maaf, terjadi kesalahan. Silakan coba lagi nanti.', 'bot');
+        addMessage('Sorry, an error occurred. Please try again later.', 'bot');
     }
 }
 
@@ -167,10 +167,10 @@ chatbotInputField?.addEventListener('keypress', (e) => {
 
 // Quick suggestions (optional)
 const quickSuggestions = [
-    'Apa itu FloodGuard?',
-    'Bagaimana cara mencegah banjir?',
-    'Apa yang harus dilakukan saat banjir?',
-    'Kontak darurat banjir Jakarta'
+    'What is FloodGuard?',
+    'How to prevent floods?',
+    'What to do during floods?',
+    'Jakarta flood emergency contacts'
 ];
 
 function addQuickSuggestions() {

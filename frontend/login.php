@@ -191,13 +191,13 @@ $title = "Login - FloodGuard Jakarta";
 <body>
     <div class="auth-container">
         <a href="../index.php" class="back-home">
-            <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            <i class="fas fa-arrow-left"></i> Back to Home
         </a>
         
         <div class="auth-card">
             <div class="auth-header">
                 <h1><i class="fas fa-shield-alt"></i> FloodGuard</h1>
-                <p>Masuk ke akun Anda</p>
+                <p>Sign in to your account</p>
             </div>
             
             <div class="auth-body">
@@ -206,13 +206,13 @@ $title = "Login - FloodGuard Jakarta";
                 <form id="loginForm">
                     <div class="form-group">
                         <label for="username">
-                            <i class="fas fa-user"></i> Username atau Email
+                            <i class="fas fa-user"></i> Username or Email
                         </label>
                         <input 
                             type="text" 
                             id="username" 
                             name="username" 
-                            placeholder="Masukkan username atau email"
+                            placeholder="Enter username or email"
                             required
                             autocomplete="username"
                         >
@@ -227,7 +227,7 @@ $title = "Login - FloodGuard Jakarta";
                                 type="password" 
                                 id="password" 
                                 name="password" 
-                                placeholder="Masukkan password"
+                                placeholder="Enter password"
                                 required
                                 autocomplete="current-password"
                             >
@@ -238,13 +238,13 @@ $title = "Login - FloodGuard Jakarta";
                     </div>
                     
                     <button type="submit" class="btn-auth" id="loginBtn">
-                        <i class="fas fa-sign-in-alt"></i> Masuk
+                        <i class="fas fa-sign-in-alt"></i> Sign In
                     </button>
                 </form>
             </div>
             
             <div class="auth-footer">
-                Belum punya akun? <a href="register.php">Daftar sekarang</a>
+                Don't have an account? <a href="register.php">Register now</a>
             </div>
         </div>
     </div>
@@ -286,13 +286,13 @@ $title = "Login - FloodGuard Jakarta";
             const password = document.getElementById('password').value;
             
             if (!username || !password) {
-                showAlert('Mohon isi semua field', 'error');
+                showAlert('Please fill in all fields', 'error');
                 return;
             }
             
             // Disable button
             loginBtn.disabled = true;
-            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
+            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             
             try {
                 const response = await fetch('../backend/api/auth.php?action=login', {
@@ -306,21 +306,21 @@ $title = "Login - FloodGuard Jakarta";
                 const result = await response.json();
                 
                 if (result.success) {
-                    showAlert('Login berhasil! Mengalihkan...', 'success');
+                    showAlert('Login successful! Redirecting...', 'success');
                     setTimeout(() => {
                         window.location.href = 'dashboard.php';
                     }, 1500);
                 } else {
-                    showAlert(result.error || 'Login gagal', 'error');
+                    showAlert(result.error || 'Login failed', 'error');
                     loginBtn.disabled = false;
-                    loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Masuk';
+                    loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
                 }
                 
             } catch (error) {
                 console.error('Login error:', error);
-                showAlert('Terjadi kesalahan koneksi', 'error');
+                showAlert('Connection error occurred', 'error');
                 loginBtn.disabled = false;
-                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Masuk';
+                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
             }
         });
     </script>

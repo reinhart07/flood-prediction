@@ -20,11 +20,11 @@ $title = "Tentang - FloodGuard Jakarta";
                 <span>FloodGuard</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Beranda</a></li>
-                <li><a href="about.php">Tentang</a></li>
-                <li><a href="prediksi.php">Prediksi Banjir</a></li>
-                <li><a href="peta.php">Peta Rawan Banjir</a></li>
-                <li><a href="berita.php">Berita</a></li>
+                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="prediksi.php">Flood Prediction</a></li>
+                <li><a href="peta.php">Flood Risk Map</a></li>
+                <li><a href="berita.php">News</a></li>
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <li><a href="dashboard.php"><i class="fas fa-user-circle"></i> Dashboard</a></li>
                 <?php else: ?>
@@ -40,8 +40,8 @@ $title = "Tentang - FloodGuard Jakarta";
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1><i class="fas fa-info-circle"></i> Tentang FloodGuard Jakarta</h1>
-            <p>Sistem Prediksi Banjir Berbasis Artificial Intelligence</p>
+            <h1><i class="fas fa-info-circle"></i> About FloodGuard Jakarta</h1>
+            <p>Artificial Intelligence Based Flood Prediction System</p>
         </div>
     </section>
 
@@ -52,28 +52,28 @@ $title = "Tentang - FloodGuard Jakarta";
             <div class="about-section">
                 <div class="about-grid">
                     <div class="about-text">
-                        <h2>Apa itu FloodGuard?</h2>
-                        <p>FloodGuard Jakarta adalah platform inovatif yang menggabungkan teknologi <strong>Artificial Intelligence (AI)</strong> dan <strong>Machine Learning</strong> untuk memprediksi potensi banjir di wilayah Jakarta.</p>
-                        <p>Dikembangkan sebagai bagian dari <strong>PROX x CORIS 2026 International Competition</strong> dengan tema <em>"Bridging Gaps: Code for Earth, Intelligence for Justice, and Sustainability for Shaping Tomorrow"</em>, FloodGuard bertujuan mengurangi dampak bencana banjir melalui sistem peringatan dini yang akurat.</p>
-                        <p>Dengan memanfaatkan data historis dari BMKG selama 5 tahun (2016-2020) dan algoritma Random Forest, sistem kami mampu memprediksi banjir dengan akurasi <strong>88.49%</strong>.</p>
+                        <h2>What is FloodGuard?</h2>
+                        <p>FloodGuard Jakarta is an innovative platform that combines <strong>Artificial Intelligence (AI)</strong> and <strong>Machine Learning</strong> technologies to predict flood potential in Jakarta.</p>
+                        <p>Developed as part of the <strong>PROX x CORIS 2026 International Competition</strong> with the theme <em>"Bridging Gaps: Code for Earth, Intelligence for Justice, and Sustainability for Shaping Tomorrow"</em>, FloodGuard aims to reduce flood disaster impacts through an accurate early warning system.</p>
+                        <p>By leveraging historical data from BMKG over 5 years (2016-2020) and Random Forest algorithms, our system can predict floods with an accuracy of <strong>88.49%</strong>.</p>
                     </div>
                     <div class="about-image">
                         <div class="stats-highlight">
                             <div class="stat-item">
                                 <h3>88.49%</h3>
-                                <p>Akurasi Model</p>
+                                <p>Model Accuracy</p>
                             </div>
                             <div class="stat-item">
                                 <h3>6,308</h3>
-                                <p>Data Training</p>
+                                <p>Training Data</p>
                             </div>
                             <div class="stat-item">
                                 <h3>4</h3>
-                                <p>Stasiun BMKG</p>
+                                <p>BMKG Stations</p>
                             </div>
                             <div class="stat-item">
                                 <h3>5 Tahun</h3>
-                                <p>Data Historis</p>
+                                <p>Historical Data</p>
                             </div>
                         </div>
                     </div>
@@ -83,9 +83,9 @@ $title = "Tentang - FloodGuard Jakarta";
             <section class="team-section">
                 <div class="container">
                     <div class="section-header">
-                        <h2>Tim Pengembang</h2>
+                        <h2>Development Team</h2>
                         <div class="header-line"></div>
-                        <p>Dikembangkan dengan dedikasi untuk PROX x CORIS 2026</p>
+                        <p>Developed with dedication for PROX x CORIS 2026</p>
                     </div>
 
                     <div class="developer-card">
@@ -102,13 +102,14 @@ $title = "Tentang - FloodGuard Jakarta";
                             </p>
                             
                             <div class="developer-bio">
-                                <p>Saya adalah mahasiswa yang passionate dalam bidang teknologi dan pengembangan web. FloodGuard Jakarta adalah project yang saya kembangkan untuk kompetisi PROX x CORIS 2026 dengan tujuan memanfaatkan teknologi AI untuk membantu masyarakat Jakarta dalam mitigasi bencana banjir.</p>
+                                <p>I am a passionate student in the field of technology and web development. 
+                                   FloodGuard Jakarta is a project that I developed for the PROX x CORIS 2026 competition with the aim of utilizing AI technology to help the people of Jakarta mitigate flood disasters.</p>
                                 
-                                <p>Dengan menggabungkan Machine Learning, Web Development modern, dan data real-time, saya berharap FloodGuard dapat menjadi solusi yang bermanfaat bagi masyarakat luas.</p>
+                                <p>By combining Machine Learning, modern Web Development, and real-time data, I hope FloodGuard can become a useful solution for the wider community.</p>
                             </div>
 
                             <div class="developer-skills">
-                                <h4><i class="fas fa-tools"></i> Tech Stack yang Digunakan:</h4>
+                                <h4><i class="fas fa-tools"></i> Tech Stack Used:</h4>
                                 <div class="skills-tags">
                                     <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
                                     <span class="skill-tag"><i class="fab fa-php"></i> PHP Native</span>
@@ -124,7 +125,7 @@ $title = "Tentang - FloodGuard Jakarta";
                             <div class="developer-stats">
                                 <div class="stat-item-dev">
                                     <strong>2000+</strong>
-                                    <small>Baris Kode</small>
+                                    <small>Code Line</small>
                                 </div>
                                 <div class="stat-item-dev">
                                     <strong>6308</strong>
@@ -135,7 +136,7 @@ $title = "Tentang - FloodGuard Jakarta";
                                     <small>Model Accuracy</small>
                                 </div>
                                 <div class="stat-item-dev">
-                                    <strong>1 Bulan</strong>
+                                    <strong>1 Month</strong>
                                     <small>Development Time</small>
                                 </div>
                             </div>
@@ -157,7 +158,7 @@ $title = "Tentang - FloodGuard Jakarta";
 
                             <div class="developer-quote">
                                 <i class="fas fa-quote-left quote-icon"></i>
-                                <p>"Teknologi harus memberikan solusi nyata untuk masalah nyata. FloodGuard adalah upaya saya untuk berkontribusi dalam melindungi Jakarta dari banjir menggunakan kekuatan AI dan data science."</p>
+                                <p>"Technology must provide real solutions to real problems. FloodGuard is my effort to contribute to protecting Jakarta from flooding using the power of AI and data science."</p>
                                 <i class="fas fa-quote-right quote-icon"></i>
                             </div>
                         </div>
@@ -171,81 +172,81 @@ $title = "Tentang - FloodGuard Jakarta";
                     <div class="mv-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Visi</h3>
-                    <p>Menjadi platform terdepan dalam sistem peringatan dini banjir berbasis AI untuk melindungi masyarakat Jakarta dan Indonesia dari dampak bencana banjir.</p>
+                    <h3>Vision</h3>
+                    <p>Being the leading platform in AI-based early flood warning systems to protect Jakarta and Indonesia's communities from flood impacts.</p>
                 </div>
                 <div class="mv-card">
                     <div class="mv-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h3>Misi</h3>
+                    <h3>Mission</h3>
                     <ul>
-                        <li>Menyediakan prediksi banjir akurat berbasis data real-time</li>
-                        <li>Meningkatkan kesadaran masyarakat tentang mitigasi banjir</li>
-                        <li>Mendukung pemerintah dalam pengambilan keputusan darurat</li>
-                        <li>Mengembangkan teknologi berkelanjutan untuk climate resilience</li>
+                        <li>Providing accurate flood predictions based on real-time data</li>
+                        <li>Increasing public awareness about flood mitigation</li>
+                        <li>Supporting government in emergency decision-making</li>
+                        <li>Developing sustainable technology for climate resilience</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Technology Stack -->
             <div class="about-section">
-                <h2 class="section-title">Teknologi yang Digunakan</h2>
+                <h2 class="section-title">Technology Used</h2>
                 <div class="tech-grid">
                     <div class="tech-card">
                         <div class="tech-icon">
                             <i class="fas fa-brain"></i>
                         </div>
                         <h4>Machine Learning</h4>
-                        <p><strong>Random Forest Classifier</strong> dengan 200 decision trees untuk prediksi akurat berdasarkan pola data historis.</p>
+                        <p><strong>Random Forest Classifier</strong> with 200 decision trees for accurate predictions based on historical data patterns.</p>
                     </div>
                     <div class="tech-card">
                         <div class="tech-icon">
                             <i class="fab fa-python"></i>
                         </div>
                         <h4>Python & Flask</h4>
-                        <p>Backend ML service menggunakan <strong>Flask</strong>, <strong>scikit-learn</strong>, dan <strong>pandas</strong> untuk data processing.</p>
+                        <p>Backend ML service using <strong>Flask</strong>, <strong>scikit-learn</strong>, dan <strong>pandas</strong> for data processing.</p>
                     </div>
                     <div class="tech-card">
                         <div class="tech-icon">
                             <i class="fab fa-php"></i>
                         </div>
                         <h4>PHP Native</h4>
-                        <p>Web backend dengan PHP native untuk integrasi ML API dan database management.</p>
+                        <p>Web backend with native PHP for ML API integration and database management.</p>
                     </div>
                     <div class="tech-card">
                         <div class="tech-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
                         <h4>Leaflet.js</h4>
-                        <p>Interactive mapping menggunakan <strong>Leaflet.js</strong> dengan data GeoJSON dari 34 provinsi Indonesia.</p>
+                        <p>Interactive mapping using <strong>Leaflet.js</strong> with GeoJSON data from 34 Indonesian provinces.</p>
                     </div>
                     <div class="tech-card">
                         <div class="tech-icon">
                             <i class="fas fa-robot"></i>
                         </div>
                         <h4>Google Gemini AI</h4>
-                        <p>Chatbot cerdas powered by <strong>Gemini API</strong> untuk menjawab pertanyaan seputar banjir.</p>
+                        <p>Smart chatbot powered by<strong>Gemini API</strong> to answer questions about flooding.</p>
                     </div>
                     <div class="tech-card">
                         <div class="tech-icon">
                             <i class="fas fa-database"></i>
                         </div>
                         <h4>BMKG Data</h4>
-                        <p>Dataset real dari 4 stasiun BMKG Jakarta dengan 6,308 records (2016-2020).</p>
+                        <p>Real dataset from 4 BMKG Jakarta stations with 6,308 records (2016-2020).</p>
                     </div>
                 </div>
             </div>
 
             <!-- How It Works -->
             <div class="about-section">
-                <h2 class="section-title">Cara Kerja FloodGuard</h2>
+                <h2 class="section-title">How FloodGuard Works</h2>
                 <div class="workflow">
                     <div class="workflow-step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h4>Input Data Cuaca</h4>
-                            <p>Pengguna memasukkan data cuaca (curah hujan, kelembaban, suhu) atau menggunakan data real-time dari API.</p>
+                            <h4>Input Weather Data</h4>
+                            <p>Users input weather data (rainfall, humidity, temperature) or use real-time data from the API.</p>
                         </div>
                     </div>
                     <div class="workflow-arrow">
@@ -255,7 +256,7 @@ $title = "Tentang - FloodGuard Jakarta";
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h4>Preprocessing Data</h4>
-                            <p>Data dinormalisasi dan di-scale menggunakan StandardScaler untuk memastikan konsistensi input.</p>
+                            <p>Data is normalized and scaled using StandardScaler to ensure input consistency.</p>
                         </div>
                     </div>
                     <div class="workflow-arrow">
@@ -265,7 +266,7 @@ $title = "Tentang - FloodGuard Jakarta";
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h4>ML Prediction</h4>
-                            <p>Model Random Forest menganalisis data dan menghasilkan probabilitas banjir (0-100%).</p>
+                            <p>Model Random Forest analyzes data and generates flood probability (0-100%).</p>
                         </div>
                     </div>
                     <div class="workflow-arrow">
@@ -275,7 +276,7 @@ $title = "Tentang - FloodGuard Jakarta";
                         <div class="step-number">4</div>
                         <div class="step-content">
                             <h4>Risk Assessment</h4>
-                            <p>Sistem mengklasifikasikan risiko: <span class="badge-low">Low</span>, <span class="badge-medium">Medium</span>, atau <span class="badge-high">High</span>.</p>
+                            <p>System classifies risks: <span class="badge-low">Low</span>, <span class="badge-medium">Medium</span>, or <span class="badge-high">High</span>.</p>
                         </div>
                     </div>
                     <div class="workflow-arrow">
@@ -284,8 +285,8 @@ $title = "Tentang - FloodGuard Jakarta";
                     <div class="workflow-step">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h4>Hasil & Rekomendasi</h4>
-                            <p>Pengguna menerima hasil prediksi lengkap dengan rekomendasi tindakan pencegahan.</p>
+                            <h4>Results & Recommendations</h4>
+                            <p>Users receive complete prediction results with prevention action recommendations.</p>
                         </div>
                     </div>
                 </div>
@@ -293,7 +294,7 @@ $title = "Tentang - FloodGuard Jakarta";
 
             <!-- Model Performance -->
             <div class="about-section">
-                <h2 class="section-title">Performa Model</h2>
+                <h2 class="section-title">Model Performance</h2>
                 <div class="performance-grid">
                     <div class="performance-card">
                         <h4>Accuracy</h4>
@@ -326,7 +327,7 @@ $title = "Tentang - FloodGuard Jakarta";
                 </div>
                 <p class="performance-note">
                     <i class="fas fa-info-circle"></i>
-                    Model dilatih menggunakan algoritma Random Forest dengan 200 estimators, max_depth 15, dan SMOTE untuk handling imbalanced data.
+                    The model is trained using the Random Forest algorithm with 200 estimators, max_depth 15, and SMOTE for handling rewarded data.
                 </p>
             </div>
 
@@ -337,32 +338,32 @@ $title = "Tentang - FloodGuard Jakarta";
                     <div class="dataset-overview">
                         <h4>Sumber Data</h4>
                         <ul>
-                            <li><i class="fas fa-check"></i> <strong>BMKG</strong> (Badan Meteorologi, Klimatologi, dan Geofisika)</li>
-                            <li><i class="fas fa-check"></i> <strong>4 Stasiun Monitoring:</strong>
+                            <li><i class="fas fa-check"></i> <strong>BMKG</strong> (Meteorology, Climatology and Geophysics Agency)</li>
+                            <li><i class="fas fa-check"></i> <strong> 4 Monitoring Stations:</strong>
                                 <ul>
-                                    <li>Stasiun Klimatologi Banten (Jakarta Selatan)</li>
-                                    <li>Stasiun Meteorologi Maritim Tanjung Priok (Jakarta Utara)</li>
-                                    <li>Stasiun Meteorologi Kemayoran (Jakarta Pusat)</li>
-                                    <li>Halim Perdana Kusuma (Jakarta Timur)</li>
+                                    <li>Banten Climatology Station (South Jakarta)</li>
+                                    <li>Tanjung Priok Maritime Meteorological Station (North Jakarta)</li>
+                                    <li>Kemayoran Meteorological Station (Central Jakarta)</li>
+                                    <li>Halim Perdana Kusuma (East Jakarta)</li>
                                 </ul>
                             </li>
-                            <li><i class="fas fa-check"></i> <strong>Periode:</strong> 2016-2020 (5 tahun)</li>
+                            <li><i class="fas fa-check"></i> <strong>Period:</strong> 2016-2020 (5 years)</li>
                             <li><i class="fas fa-check"></i> <strong>Total Records:</strong> 6,308 data</li>
-                            <li><i class="fas fa-check"></i> <strong>Flood Events:</strong> 476 kejadian banjir (7.55%)</li>
+                            <li><i class="fas fa-check"></i> <strong>Flood Events:</strong> 476 flood events (7.55%)</li>
                         </ul>
                     </div>
                     <div class="features-list">
                         <h4>Features Utama</h4>
                         <div class="feature-badges">
-                            <span class="feature-badge"><i class="fas fa-tint"></i> Kelembaban (RH_avg) - 23.6%</span>
-                            <span class="feature-badge"><i class="fas fa-temperature-low"></i> Suhu Min (Tn) - 16.5%</span>
-                            <span class="feature-badge"><i class="fas fa-thermometer-half"></i> Suhu Avg (Tavg) - 16.1%</span>
-                            <span class="feature-badge"><i class="fas fa-cloud-rain"></i> Curah Hujan (RR) - 12.7%</span>
-                            <span class="feature-badge"><i class="fas fa-wind"></i> Kecepatan Angin - 9.0%</span>
-                            <span class="feature-badge"><i class="fas fa-sun"></i> Durasi Sinar Matahari - 7.3%</span>
+                            <span class="feature-badge"><i class="fas fa-tint"></i> Humidity (RH_avg) - 23.6%</span>
+                            <span class="feature-badge"><i class="fas fa-temperature-low"></i> Min Temperature (Tn) - 16.5%</span>
+                            <span class="feature-badge"><i class="fas fa-thermometer-half"></i> Avg Temperature (Tavg) - 16.1%</span>
+                            <span class="feature-badge"><i class="fas fa-cloud-rain"></i> Rainfall (RR) - 12.7%</span>
+                            <span class="feature-badge"><i class="fas fa-wind"></i> Wind Speed - 9.0%</span>
+                            <span class="feature-badge"><i class="fas fa-sun"></i> Sunshine Duration - 7.3%</span>
                         </div>
                         <p class="feature-note">
-                            <i class="fas fa-lightbulb"></i> Persentase menunjukkan <strong>Feature Importance</strong> dari model Random Forest.
+                            <i class="fas fa-lightbulb"></i> Percentage shows <strong>Feature Importance</strong> from the Random Forest model.
                         </p>
                     </div>
                 </div>
@@ -392,7 +393,7 @@ $title = "Tentang - FloodGuard Jakarta";
 
             <!-- Partners -->
             <div class="about-section">
-                <h2 class="section-title">Didukung Oleh</h2>
+                <h2 class="section-title">Powered By</h2>
                 <div class="partners-showcase">
                     <div class="partner-item">
                         <img src="img/coris.png" alt="CORIS Logo">
@@ -414,14 +415,14 @@ $title = "Tentang - FloodGuard Jakarta";
 
             <!-- CTA -->
             <div class="about-cta">
-                <h2>Siap Mencoba FloodGuard?</h2>
-                <p>Lindungi keluarga Anda dengan prediksi banjir yang akurat</p>
+                <h2>Ready to Try FloodGuard?</h2>
+                <p>Protect your family with accurate flood predictions</p>
                 <div class="cta-buttons">
                     <a href="prediksi.php" class="btn btn-primary btn-lg">
-                        <i class="fas fa-chart-line"></i> Mulai Prediksi
+                        <i class="fas fa-chart-line"></i> Start Prediction
                     </a>
                     <a href="peta.php" class="btn btn-secondary btn-lg">
-                        <i class="fas fa-map"></i> Lihat Peta
+                        <i class="fas fa-map"></i> View Map
                     </a>
                 </div>
             </div>
@@ -434,7 +435,7 @@ $title = "Tentang - FloodGuard Jakarta";
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-shield-alt"></i> FloodGuard Jakarta</h3>
-                    <p>Sistem prediksi banjir berbasis AI untuk melindungi Jakarta.</p>
+                    <p>AI-based flood prediction system to protect Jakarta.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -445,23 +446,23 @@ $title = "Tentang - FloodGuard Jakarta";
                 <div class="footer-col">
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="../index.php">Beranda</a></li>
-                        <li><a href="about.php">Tentang</a></li>
-                        <li><a href="prediksi.php">Prediksi</a></li>
-                        <li><a href="peta.php">Peta</a></li>
-                        <li><a href="berita.php">Berita</a></li>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="prediksi.php">Prediction</a></li>
+                        <li><a href="peta.php">Map</a></li>
+                        <li><a href="berita.php">News</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Kontak Darurat</h4>
+                    <h4>Emergency Contact</h4>
                     <ul>
                         <li><i class="fas fa-phone"></i> BPBD DKI: 021-6560777</li>
-                        <li><i class="fas fa-phone"></i> Posko Banjir: 112</li>
+                        <li><i class="fas fa-phone"></i> Flood Post: 112</li>
                         <li><i class="fas fa-envelope"></i> info@floodguard.id</li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Didukung Oleh</h4>
+                    <h4>Powered By</h4>
                     <div class="partner-logos">
                         <img src="img/coris.png" alt="CORIS" class="partner-logo">
                         <img src="img/klabat.png" alt="Klabat" class="partner-logo">
@@ -470,7 +471,7 @@ $title = "Tentang - FloodGuard Jakarta";
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FloodGuard Jakarta. Dikembangkan untuk PROX x CORIS 2026.</p>
+                <p>&copy; © 2026 FloodGuard Jakarta. Developed for PROX x CORIS 2026.</p>
             </div>
         </div>
     </footer>

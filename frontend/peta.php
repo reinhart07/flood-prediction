@@ -62,11 +62,11 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
                 <span>FloodGuard</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Beranda</a></li>
-                <li><a href="about.php">Tentang</a></li>
-                <li><a href="prediksi.php">Prediksi Banjir</a></li>
-                <li><a href="peta.php">Peta Rawan Banjir</a></li>
-                <li><a href="berita.php">Berita</a></li>
+                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="prediksi.php">Flood Prediction</a></li>
+                <li><a href="peta.php">Flood Risk Map</a></li>
+                <li><a href="berita.php">News</a></li>
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <li><a href="dashboard.php"><i class="fas fa-user-circle"></i> Dashboard</a></li>
                 <?php else: ?>
@@ -82,8 +82,8 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1><i class="fas fa-map-marked-alt"></i> Peta Rawan Banjir Jakarta</h1>
-            <p>Visualisasi wilayah rawan banjir dan monitoring real-time</p>
+            <h1><i class="fas fa-map-marked-alt"></i> Jakarta Flood Prone Map</h1>
+            <p>Visualization of flood-prone areas and real-time monitoring</p>
         </div>
     </section>
 
@@ -93,90 +93,90 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
             <!-- Sidebar -->
             <div class="map-sidebar">
                 <div class="sidebar-header">
-                    <h3><i class="fas fa-layer-group"></i> Layer Peta</h3>
+                    <h3><i class="fas fa-layer-group"></i> Map Layers</h3>
                 </div>
                 
                 <div class="sidebar-content">
                     <!-- Region Filter -->
                     <div class="sidebar-section">
-                        <h4>Wilayah Jakarta</h4>
+                        <h4>Jakarta Area</h4>
                         <div class="region-filter">
                             <label class="checkbox-label">
                                 <input type="checkbox" class="region-toggle" value="jakarta-selatan" checked>
-                                <span>Jakarta Selatan</span>
+                                <span>South Jakarta</span>
                             </label>
                             <label class="checkbox-label">
                                 <input type="checkbox" class="region-toggle" value="jakarta-utara" checked>
-                                <span>Jakarta Utara</span>
+                                <span>North Jakarta</span>
                             </label>
                             <label class="checkbox-label">
                                 <input type="checkbox" class="region-toggle" value="jakarta-pusat" checked>
-                                <span>Jakarta Pusat</span>
+                                <span>Central Jakarta</span>
                             </label>
                             <label class="checkbox-label">
                                 <input type="checkbox" class="region-toggle" value="jakarta-timur" checked>
-                                <span>Jakarta Timur</span>
+                                <span>East Jakarta</span>
                             </label>
                             <label class="checkbox-label">
                                 <input type="checkbox" class="region-toggle" value="jakarta-barat" checked>
-                                <span>Jakarta Barat</span>
+                                <span>West Jakarta</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- Risk Level Legend -->
                     <div class="sidebar-section">
-                        <h4>Tingkat Risiko</h4>
+                        <h4>Flood Risk Level</h4>
                         <div class="legend">
                             <div class="legend-item">
                                 <span class="legend-color" style="background: #27ae60;"></span>
-                                <span>Rendah (Low)</span>
+                                <span>Low</span>
                             </div>
                             <div class="legend-item">
                                 <span class="legend-color" style="background: #f39c12;"></span>
-                                <span>Sedang (Medium)</span>
+                                <span>Medium</span>
                             </div>
                             <div class="legend-item">
                                 <span class="legend-color" style="background: #e74c3c;"></span>
-                                <span>Tinggi (High)</span>
+                                <span>High</span>
                             </div>
                             <div class="legend-item">
                                 <span class="legend-color" style="background: #8e44ad;"></span>
-                                <span>Sangat Tinggi (Critical)</span>
+                                <span>Very High (Critical)</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- BMKG Stations -->
                     <div class="sidebar-section">
-                        <h4>Stasiun BMKG</h4>
+                        <h4>BMKG Stations</h4>
                         <div class="station-list">
                             <div class="station-item">
                                 <i class="fas fa-broadcast-tower"></i>
                                 <div class="station-info">
-                                    <strong>Klimatologi Banten</strong>
-                                    <small>Jakarta Selatan</small>
+                                    <strong>Banten Climatology</strong>
+                                    <small>South Jakarta</small>
                                 </div>
                             </div>
                             <div class="station-item">
                                 <i class="fas fa-broadcast-tower"></i>
                                 <div class="station-info">
                                     <strong>Tanjung Priok</strong>
-                                    <small>Jakarta Utara</small>
+                                    <small>North Jakarta</small>
                                 </div>
                             </div>
                             <div class="station-item">
                                 <i class="fas fa-broadcast-tower"></i>
                                 <div class="station-info">
                                     <strong>Kemayoran</strong>
-                                    <small>Jakarta Pusat</small>
+                                    <small>Central Jakarta</small>
                                 </div>
                             </div>
                             <div class="station-item">
                                 <i class="fas fa-broadcast-tower"></i>
                                 <div class="station-info">
                                     <strong>Halim Perdana Kusuma</strong>
-                                    <small>Jakarta Timur</small>
+                                    <small>East Jakarta</small>
                                 </div>
                             </div>
                         </div>
@@ -184,27 +184,27 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
 
                     <!-- Quick Stats -->
                     <div class="sidebar-section">
-                        <h4>Statistik Hari Ini</h4>
+                        <h4> Statistik Real-Time</h4>
                         <div class="quick-stats">
                             <div class="stat-mini">
                                 <i class="fas fa-cloud-rain"></i>
                                 <div>
                                     <strong>12.5</strong>
-                                    <small>Curah Hujan (mm)</small>
+                                    <small>Rainfall (mm)</small>
                                 </div>
                             </div>
                             <div class="stat-mini">
                                 <i class="fas fa-tint"></i>
                                 <div>
                                     <strong>78</strong>
-                                    <small>Kelembaban (%)</small>
+                                    <small>Humidity (%)</small>
                                 </div>
                             </div>
                             <div class="stat-mini">
                                 <i class="fas fa-thermometer-half"></i>
                                 <div>
                                     <strong>28.5</strong>
-                                    <small>Suhu (°C)</small>
+                                    <small>Temperature (°C)</small>
                                 </div>
                             </div>
                         </div>
@@ -222,67 +222,66 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
     <!-- Info Section -->
     <section class="map-info-section">
         <div class="container">
-            <h2 class="section-title">Wilayah Rawan Banjir Jakarta</h2>
+            <h2 class="section-title">Flood-Prone Areas in Jakarta</h2>
             <div class="flood-prone-grid">
             <div class="prone-card">
-                <h4><i class="fas fa-map-pin"></i> Jakarta Utara</h4>
-                <p><strong>Tingkat Risiko: Sangat Tinggi</strong></p>
+                <h4><i class="fas fa-map-pin"></i> North Jakarta</h4>
+                <p><strong>Flood Risk Level: Very High</strong></p>
                 <ul>
                     <li>Kelapa Gading</li>
                     <li>Penjaringan</li>
                     <li>Koja</li>
                     <li>Tanjung Priok</li>
                 </ul>
-                <small>Rob dan banjir kiriman sungai</small>
+                <small>Rob and flood river shipments</small>
             </div>
 
             <div class="prone-card">
-                <h4><i class="fas fa-map-pin"></i> Jakarta Timur</h4>
-                <p><strong>Tingkat Risiko: Tinggi</strong></p>
+                <h4><i class="fas fa-map-pin"></i> East Jakarta</h4>
+                <p><strong>Flood Risk Level: High</strong></p>
                 <ul>
                     <li>Cawang</li>
                     <li>Kampung Melayu</li>
                     <li>Cipinang Melayu</li>
                     <li>Duren Sawit</li>
                 </ul>
-                <small>Dekat aliran Sungai Ciliwung</small>
+                <small>Near the flow of the Ciliwung River</small>
             </div>
 
             <div class="prone-card">
-                <h4><i class="fas fa-map-pin"></i> Jakarta Barat</h4>
-                <p><strong>Tingkat Risiko: Tinggi</strong></p>
+                <h4><i class="fas fa-map-pin"></i> West Jakarta</h4>
+                <p><strong>Flood Risk Level: High</strong></p>
                 <ul>
                     <li>Kalideres</li>
                     <li>Cengkareng</li>
                     <li>Tambora</li>
                     <li>Grogol Petamburan</li>
                 </ul>
-                <small>Luapan Kali Pesanggrahan</small>
+                <small>Overflowing Pesanggrahan River</small>
             </div>
 
-            <!-- TAMBAHKAN INI -->
             <div class="prone-card">
-                <h4><i class="fas fa-map-pin"></i> Jakarta Pusat</h4>
-                <p><strong>Tingkat Risiko: Sedang</strong></p>
+                <h4><i class="fas fa-map-pin"></i> Central Jakarta</h4>
+                <p><strong>Flood Risk Level: Medium</strong></p>
                 <ul>
                     <li>Kemayoran</li>
                     <li>Sawah Besar</li>
                     <li>Tanah Abang</li>
                     <li>Gambir</li>
                 </ul>
-                <small>Banjir lokal dekat Kali Ciliwung</small>
+                <small>Local flooding near Ciliwung River</small>
             </div>
 
             <div class="prone-card">
-                <h4><i class="fas fa-map-pin"></i> Jakarta Selatan</h4>
-                <p><strong>Tingkat Risiko: Sedang</strong></p>
+                <h4><i class="fas fa-map-pin"></i> South Jakarta</h4>
+                <p><strong>Flood Risk Level: Medium</strong></p>
                 <ul>
                     <li>Kebayoran Lama</li>
                     <li>Cilandak</li>
                     <li>Jagakarsa</li>
                     <li>Mampang Prapatan</li>
                 </ul>
-                <small>Banjir lokal saat hujan deras</small>
+                <small>Local flooding during heavy rains</small>
             </div>
         </div>
         </div>
@@ -294,18 +293,18 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-shield-alt"></i> FloodGuard Jakarta</h3>
-                    <p>Sistem prediksi banjir berbasis AI.</p>
+                    <p>AI-based flood prediction system.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="../index.php">Beranda</a></li>
-                        <li><a href="about.php">Tentang</a></li>
-                        <li><a href="prediksi.php">Prediksi</a></li>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="prediksi.php">Prediction</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Didukung Oleh</h4>
+                    <h4>Supported By</h4>
                     <div class="partner-logos">
                         <img src="../frontend/img/coris.png" alt="CORIS" class="partner-logo">
                         <img src="../frontend/img/klabat.png" alt="Klabat" class="partner-logo">
@@ -336,31 +335,31 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
         // Jakarta regions with flood risk levels
         const jakartaRegions = [
             {
-                name: 'Jakarta Utara',
+                name: 'North Jakarta',
                 coords: [-6.138, 106.863],
                 risk: 'Critical',
                 color: '#8e44ad'
             },
             {
-                name: 'Jakarta Timur',
+                name: 'East Jakarta',
                 coords: [-6.225, 106.900],
                 risk: 'High',
                 color: '#e74c3c'
             },
             {
-                name: 'Jakarta Barat',
+                name: 'West Jakarta',
                 coords: [-6.168, 106.760],
                 risk: 'High',
                 color: '#e74c3c'
             },
             {
-                name: 'Jakarta Selatan',
+                name: 'South Jakarta',
                 coords: [-6.290, 106.813],
                 risk: 'Medium',
                 color: '#f39c12'
             },
             {
-                name: 'Jakarta Pusat',
+                name: 'Central Jakarta',
                 coords: [-6.186, 106.834],
                 risk: 'Medium',
                 color: '#f39c12'
@@ -388,10 +387,10 @@ $title = "Peta Rawan Banjir - FloodGuard Jakarta";
 
         // BMKG Stations
         const stations = [
-            { name: 'Klimatologi Banten', coords: [-6.290, 106.813], area: 'Jakarta Selatan' },
-            { name: 'Tanjung Priok', coords: [-6.117, 106.883], area: 'Jakarta Utara' },
-            { name: 'Kemayoran', coords: [-6.167, 106.845], area: 'Jakarta Pusat' },
-            { name: 'Halim Perdana Kusuma', coords: [-6.266, 106.891], area: 'Jakarta Timur' }
+            { name: 'Klimatologi Banten', coords: [-6.290, 106.813], area: 'South Jakarta' },
+            { name: 'Tanjung Priok', coords: [-6.117, 106.883], area: 'North Jakarta' },
+            { name: 'Kemayoran', coords: [-6.167, 106.845], area: 'Central Jakarta' },
+            { name: 'Halim Perdana Kusuma', coords: [-6.266, 106.891], area: 'East Jakarta' }
         ];
 
         stations.forEach(station => {

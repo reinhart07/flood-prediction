@@ -1,4 +1,3 @@
-
 // FLOODGUARD - PREDICTION PAGE JS
 
 
@@ -106,7 +105,7 @@ if (useCurrentWeatherBtn) {
         console.log('🌤️ Auto-fill weather data triggered');
         
         const originalText = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengambil data...';
+        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Fetching data...';
         this.disabled = true;
         
         // Simulate API delay
@@ -122,12 +121,12 @@ if (useCurrentWeatherBtn) {
                 document.getElementById('wind-max').value = '3.5';
                 document.getElementById('wind-avg').value = '2';
                 
-                showNotification('✓ Data cuaca berhasil dimuat!', 'success');
+                showNotification('✓ Weather data loaded successfully!', 'success');
                 console.log('✅ Auto-fill completed');
                 
             } catch (error) {
                 console.error('❌ Auto-fill error:', error);
-                showNotification('✗ Gagal mengisi data', 'error');
+                showNotification('✗ Failed to load data', 'error');
             } finally {
                 this.innerHTML = originalText;
                 this.disabled = false;
@@ -170,30 +169,30 @@ if (predictionForm) {
             
             if (missingFields.length > 0) {
                 console.error('❌ Missing fields:', missingFields);
-                showNotification('Mohon isi semua field yang wajib (*)', 'error');
+                showNotification('Please fill in all required fields (*)', 'error');
                 return;
             }
             
             // Validate temperature logic
             if (data.Tn > data.Tavg) {
-                showNotification('Suhu minimum tidak boleh lebih besar dari rata-rata', 'error');
+                showNotification('Minimum temperature cannot be greater than average', 'error');
                 return;
             }
             
             if (data.Tx < data.Tavg) {
-                showNotification('Suhu maximum tidak boleh lebih kecil dari rata-rata', 'error');
+                showNotification('Maximum temperature cannot be less than average', 'error');
                 return;
             }
             
             // Validate wind speed logic
             if (data.ff_avg > data.ff_x) {
-                showNotification('Kecepatan angin rata-rata tidak boleh > maximum', 'error');
+                showNotification('Average wind speed cannot be greater than maximum', 'error');
                 return;
             }
             
             // Show loading state
             if (predictBtn) {
-                predictBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses prediksi...';
+                predictBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing prediction...';
                 predictBtn.disabled = true;
             }
             
@@ -266,15 +265,15 @@ if (predictionForm) {
                         savePredictionToDatabase(data, result);
                     } else {
                         console.log('ℹ️ User not logged in, skipping database save');
-                        showNotification('✓ Prediksi berhasil! Login untuk menyimpan history.', 'success');
+                        showNotification('✓ Prediction successful! Login to save history.', 'success');
                     }
                     
                 } catch (error) {
                     console.error('❌ Prediction error:', error);
-                    showNotification('Terjadi kesalahan: ' + error.message, 'error');
+                    showNotification('An error occurred: ' + error.message, 'error');
                 } finally {
                     if (predictBtn) {
-                        predictBtn.innerHTML = '<i class="fas fa-chart-line"></i> Prediksi Sekarang';
+                        predictBtn.innerHTML = '<i class="fas fa-chart-line"></i> Predict Now';
                         predictBtn.disabled = false;
                     }
                 }
@@ -282,10 +281,10 @@ if (predictionForm) {
             
         } catch (error) {
             console.error('❌ Form processing error:', error);
-            showNotification('Terjadi kesalahan saat memproses form', 'error');
+            showNotification('An error occurred while processing the form', 'error');
             
             if (predictBtn) {
-                predictBtn.innerHTML = '<i class="fas fa-chart-line"></i> Prediksi Sekarang';
+                predictBtn.innerHTML = '<i class="fas fa-chart-line"></i> Predict Now';
                 predictBtn.disabled = false;
             }
         }
@@ -325,15 +324,15 @@ async function savePredictionToDatabase(inputData, result) {
         
         if (saveResult.success) {
             console.log('✅ Prediction saved to database');
-            showNotification('✓ Prediksi berhasil dan disimpan!', 'success');
+            showNotification('✓ Prediction successful and saved!', 'success');
         } else {
             console.error('❌ Failed to save:', saveResult.error);
-            showNotification('✓ Prediksi berhasil! (Gagal menyimpan ke database)', 'success');
+            showNotification('✓ Prediction successful! (Failed to save to database)', 'success');
         }
         
     } catch (error) {
         console.error('❌ Save error:', error);
-        showNotification('✓ Prediksi berhasil! (Gagal menyimpan ke database)', 'success');
+        showNotification('✓ Prediction successful! (Failed to save to database)', 'success');
     }
 }
 
@@ -351,45 +350,45 @@ function displayResult(result, inputData) {
     switch (risk_level) {
         case 'High':
             statusEmoji = '🚨';
-            statusText = 'Risiko Tinggi';
+            statusText = 'High Risk';
             badgeClass = 'badge-high';
-            description = 'PERINGATAN! Kondisi cuaca menunjukkan risiko banjir tinggi. Segera lakukan tindakan pencegahan!';
+            description = 'WARNING! Weather conditions indicate high flood risk. Take preventive action immediately!';
             recommendations = [
-                'SEGERA pindahkan keluarga ke tempat aman',
-                'Matikan aliran listrik dan gas di rumah',
-                'Bawa tas darurat berisi dokumen dan obat-obatan penting',
-                'Hubungi BPBD DKI Jakarta di 021-6560777 atau 112',
-                'Jangan mencoba melintasi air banjir yang tinggi',
-                'Ikuti instruksi dari petugas dan Tim SAR'
+                'IMMEDIATELY evacuate family to safe location',
+                'Turn off electricity and gas supply at home',
+                'Bring emergency bag containing documents and important medicines',
+                'Contact BPBD DKI Jakarta at 021-6560777 or 112',
+                'Do not attempt to cross high floodwater',
+                'Follow instructions from officers and SAR Team'
             ];
             break;
             
         case 'Medium':
             statusEmoji = '⚠️';
-            statusText = 'Risiko Sedang';
+            statusText = 'Medium Risk';
             badgeClass = 'badge-medium';
-            description = 'Kondisi cuaca menunjukkan potensi banjir sedang. Mulai lakukan persiapan dan tetap waspada.';
+            description = 'Weather conditions indicate moderate flood potential. Start preparations and remain vigilant.';
             recommendations = [
-                'Pindahkan barang berharga ke tempat yang lebih tinggi',
-                'Siapkan tas darurat berisi dokumen penting',
-                'Pantau terus perkembangan cuaca dari BMKG',
-                'Matikan aliran listrik jika air mulai naik',
-                'Hubungi keluarga untuk koordinasi',
-                'Siapkan jalur evakuasi alternatif'
+                'Move valuables to higher ground',
+                'Prepare emergency bag containing important documents',
+                'Continue monitoring weather updates from BMKG',
+                'Turn off electricity if water starts rising',
+                'Contact family for coordination',
+                'Prepare alternative evacuation routes'
             ];
             break;
             
         default: // Low
             statusEmoji = '✅';
-            statusText = 'Risiko Rendah';
+            statusText = 'Low Risk';
             badgeClass = 'badge-low';
-            description = 'Kondisi cuaca saat ini menunjukkan kemungkinan banjir yang rendah. Namun tetap waspada terhadap perubahan cuaca mendadak.';
+            description = 'Current weather conditions indicate low flood probability. However, remain vigilant for sudden weather changes.';
             recommendations = [
-                'Tetap pantau informasi cuaca dari BMKG',
-                'Pastikan saluran air di sekitar rumah lancar',
-                'Siapkan perlengkapan darurat sebagai antisipasi',
-                'Bersihkan selokan dari sampah secara berkala',
-                'Simpan nomor kontak darurat BPBD'
+                'Continue monitoring weather information from BMKG',
+                'Ensure water channels around home are clear',
+                'Prepare emergency supplies as precaution',
+                'Clean gutters from garbage regularly',
+                'Save BPBD emergency contact numbers'
             ];
     }
     
@@ -404,56 +403,56 @@ function displayResult(result, inputData) {
         ${isLoggedIn ? `
             <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
                 <strong style="color: #065f46;">
-                    <i class="fas fa-check-circle"></i> Hasil prediksi telah disimpan ke akun Anda
+                    <i class="fas fa-check-circle"></i> Prediction result has been saved to your account
                 </strong>
                 <p style="margin: 0.5rem 0 0 0; color: #065f46;">
-                    <a href="dashboard.php" style="color: #059669; text-decoration: underline;">Lihat riwayat prediksi →</a>
+                    <a href="dashboard.php" style="color: #059669; text-decoration: underline;">View prediction history →</a>
                 </p>
             </div>
         ` : `
             <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
                 <strong style="color: #92400e;">
-                    <i class="fas fa-info-circle"></i> Login untuk menyimpan riwayat prediksi
+                    <i class="fas fa-info-circle"></i> Login to save prediction history
                 </strong>
                 <p style="margin: 0.5rem 0 0 0; color: #92400e;">
-                    <a href="login.php" style="color: #d97706; text-decoration: underline;">Login sekarang →</a>
+                    <a href="login.php" style="color: #d97706; text-decoration: underline;">Login now →</a>
                 </p>
             </div>
         `}
         
         <div class="result-data-summary">
-            <h4><i class="fas fa-database"></i> Data Input</h4>
+            <h4><i class="fas fa-database"></i> Input Data</h4>
             <div class="data-grid">
                 <div class="data-item">
                     <i class="fas fa-cloud-rain"></i>
                     <strong>${inputData.RR}</strong>
-                    <small>Curah Hujan (mm)</small>
+                    <small>Rainfall (mm)</small>
                 </div>
                 <div class="data-item">
                     <i class="fas fa-tint"></i>
                     <strong>${inputData.RH_avg}</strong>
-                    <small>Kelembaban (%)</small>
+                    <small>Humidity (%)</small>
                 </div>
                 <div class="data-item">
                     <i class="fas fa-thermometer-half"></i>
                     <strong>${inputData.Tavg}</strong>
-                    <small>Suhu Rata-rata (°C)</small>
+                    <small>Avg Temperature (°C)</small>
                 </div>
                 <div class="data-item">
                     <i class="fas fa-sun"></i>
                     <strong>${inputData.ss}</strong>
-                    <small>Sinar Matahari (jam)</small>
+                    <small>Sunshine (hours)</small>
                 </div>
                 <div class="data-item">
                     <i class="fas fa-wind"></i>
                     <strong>${inputData.ff_x}</strong>
-                    <small>Angin Max (m/s)</small>
+                    <small>Max Wind (m/s)</small>
                 </div>
             </div>
         </div>
         
         <div class="result-recommendations">
-            <h4><i class="fas fa-lightbulb"></i> Rekomendasi Tindakan</h4>
+            <h4><i class="fas fa-lightbulb"></i> Action Recommendations</h4>
             <ul>
                 ${recommendations.map(rec => `<li><i class="fas fa-check-circle"></i> ${rec}</li>`).join('')}
             </ul>
@@ -462,8 +461,8 @@ function displayResult(result, inputData) {
         <div style="margin-top: 1.5rem; padding: 1rem; background: #f1f5f9; border-radius: 8px;">
             <small style="color: #64748b;">
                 <i class="fas fa-info-circle"></i> 
-                Prediksi berdasarkan model Random Forest dengan akurasi 88.49%. 
-                Data: Suhu ${inputData.Tn}°C - ${inputData.Tx}°C, Angin ${inputData.ff_avg} m/s
+                Prediction based on Random Forest model with 88.49% accuracy. 
+                Data: Temperature ${inputData.Tn}°C - ${inputData.Tx}°C, Wind ${inputData.ff_avg} m/s
             </small>
         </div>
     `;
@@ -515,7 +514,7 @@ if (resetBtn) {
             behavior: 'smooth' 
         });
         
-        showNotification('Form telah direset', 'info');
+        showNotification('Form has been reset', 'info');
     });
 }
 
@@ -527,7 +526,7 @@ if (saveBtn) {
         console.log('💾 Save result');
         
         if (!window.lastPrediction) {
-            showNotification('Tidak ada hasil untuk disimpan', 'error');
+            showNotification('No results to save', 'error');
             return;
         }
         
@@ -549,12 +548,12 @@ if (saveBtn) {
             // Cleanup
             URL.revokeObjectURL(url);
             
-            showNotification('✓ Hasil prediksi berhasil disimpan!', 'success');
+            showNotification('✓ Prediction result successfully saved!', 'success');
             console.log('✅ Result saved:', filename);
             
         } catch (error) {
             console.error('❌ Save error:', error);
-            showNotification('Gagal menyimpan hasil', 'error');
+            showNotification('Failed to save results', 'error');
         }
     });
 }
@@ -575,17 +574,17 @@ if (numberInputs) {
             if (!this.value) return;
             
             // Check minimum
-            if (!isNaN(min) && value < min) {
+           if (!isNaN(min) && value < min) {
                 console.warn(`Value ${value} below minimum ${min} for ${this.name}`);
                 this.value = min;
-                showNotification(`Nilai minimum untuk ${this.name}: ${min}`, 'error');
+                showNotification(`Minimum value for ${this.name}: ${min}`, 'error');
             }
             
             // Check maximum
             if (!isNaN(max) && value > max) {
                 console.warn(`Value ${value} above maximum ${max} for ${this.name}`);
                 this.value = max;
-                showNotification(`Nilai maximum untuk ${this.name}: ${max}`, 'error');
+                showNotification(`Maximum value for ${this.name}: ${max}`, 'error');
             }
         });
     });

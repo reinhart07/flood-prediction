@@ -1,8 +1,8 @@
 <?php 
-$title = "Berita Banjir - FloodGuard Jakarta";
+$title = "Flood News - FloodGuard Jakarta";
 ?>
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -169,11 +169,11 @@ $title = "Berita Banjir - FloodGuard Jakarta";
                 <span>FloodGuard</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Beranda</a></li>
-                <li><a href="about.php">Tentang</a></li>
-                <li><a href="prediksi.php">Prediksi Banjir</a></li>
-                <li><a href="peta.php">Peta Rawan Banjir</a></li>
-                <li><a href="berita.php">Berita</a></li>
+                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="prediksi.php">Flood Prediction</a></li>
+                <li><a href="peta.php">Flood Risk Map</a></li>
+                <li><a href="berita.php">News</a></li>
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <li><a href="dashboard.php"><i class="fas fa-user-circle"></i> Dashboard</a></li>
                 <?php else: ?>
@@ -189,8 +189,8 @@ $title = "Berita Banjir - FloodGuard Jakarta";
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1><i class="fas fa-newspaper"></i> Berita & Informasi Banjir</h1>
-            <p>Update terkini seputar banjir Jakarta dan mitigasi bencana</p>
+            <h1><i class="fas fa-newspaper"></i> Flood News & Information</h1>
+            <p>Latest updates on Jakarta floods and disaster mitigation</p>
         </div>
     </section>
 
@@ -198,10 +198,10 @@ $title = "Berita Banjir - FloodGuard Jakarta";
     <section class="news-section">
         <div class="container">
             <div class="news-filter">
-                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn active" data-category="all">All</button>
                 <button class="filter-btn" data-category="breaking">Breaking News</button>
-                <button class="filter-btn" data-category="tips">Tips & Edukasi</button>
-                <button class="filter-btn" data-category="update">Update Cuaca</button>
+                <button class="filter-btn" data-category="tips">Tips & Education</button>
+                <button class="filter-btn" data-category="update">Weather Update</button>
             </div>
 
             <div class="news-grid">
@@ -209,48 +209,48 @@ $title = "Berita Banjir - FloodGuard Jakarta";
                 <div class="news-card" data-category="breaking" data-id="1">
                     <div class="news-badge badge-breaking">Breaking News</div>
                     <div class="news-image">
-                        <img src="/img/berita1.jpg" alt="Banjir Jakarta">
+                        <img src="/img/berita1.jpg" alt="Jakarta Flood">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
-                            <span><i class="fas fa-calendar"></i> 26 Januari 2026</span>
-                            <span><i class="fas fa-clock"></i> 14:30 WIB</span>
+                            <span><i class="fas fa-calendar"></i> January 26, 2026</span>
+                            <span><i class="fas fa-clock"></i> 2:30 PM WIB</span>
                         </div>
-                        <h3>BMKG: Waspada Hujan Lebat di Jakarta Hari Ini</h3>
-                        <p>BMKG memperingatkan potensi hujan lebat dengan intensitas sedang hingga lebat di wilayah Jakarta dan sekitarnya. Masyarakat diminta untuk waspada terhadap potensi banjir lokal...</p>
-                        <button class="btn-read-more" onclick="openModal(1)">Baca Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                        <h3>BMKG: Heavy Rain Alert in Jakarta Today</h3>
+                        <p>BMKG warns of potential heavy rainfall with moderate to heavy intensity in Jakarta and surrounding areas. The public is advised to be vigilant about potential local flooding...</p>
+                        <button class="btn-read-more" onclick="openModal(1)">Read More <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
                 <!-- News Card 1 -->
                 <div class="news-card" data-category="update" data-id="2">
-                    <div class="news-badge badge-update">Update Cuaca</div>
+                    <div class="news-badge badge-update">Weather Update</div>
                     <div class="news-image">
-                        <img src="../img/berita2.jpg" alt="Prediksi Cuaca">
+                        <img src="../img/berita2.jpg" alt="Weather Forecast">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
-                            <span><i class="fas fa-calendar"></i> 25 Januari 2026</span>
+                            <span><i class="fas fa-calendar"></i> January 25, 2026</span>
                         </div>
-                        <h3>Prediksi Cuaca: Hujan Sedang Selama Seminggu</h3>
-                        <p>BMKG memprediksi curah hujan sedang akan berlangsung selama seminggu ke depan di wilayah Jakarta...</p>
-                        <button class="btn-read-more" onclick="openModal(2)">Baca Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                        <h3>Weather Forecast: Moderate Rain for a Week</h3>
+                        <p>BMKG predicts moderate rainfall will last for the next week in Jakarta area...</p>
+                        <button class="btn-read-more" onclick="openModal(2)">Read More <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
                 <!-- News Card 2 -->
                 <div class="news-card" data-category="tips" data-id="3">
-                    <div class="news-badge badge-tips">Tips & Edukasi</div>
+                    <div class="news-badge badge-tips">Tips & Education</div>
                     <div class="news-image">
-                        <img src="../img/berita3.png" alt="Tips Banjir">
+                        <img src="../img/berita3.png" alt="Flood Tips">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
-                            <span><i class="fas fa-calendar"></i> 24 Januari 2026</span>
+                            <span><i class="fas fa-calendar"></i> January 24, 2026</span>
                         </div>
-                        <h3>7 Langkah Menghadapi Banjir di Rumah</h3>
-                        <p>Berikut adalah langkah-langkah penting yang perlu dilakukan saat banjir melanda rumah Anda...</p>
-                        <button class="btn-read-more" onclick="openModal(3)">Baca Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                        <h3>7 Steps to Face Floods at Home</h3>
+                        <p>Here are important steps you need to take when floods hit your home...</p>
+                        <button class="btn-read-more" onclick="openModal(3)">Read More <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
@@ -258,47 +258,47 @@ $title = "Berita Banjir - FloodGuard Jakarta";
                 <div class="news-card" data-category="breaking" data-id="4">
                     <div class="news-badge badge-breaking">Breaking News</div>
                     <div class="news-image">
-                        <img src="../img/berita4.png" alt="Evakuasi">
+                        <img src="../img/berita4.png" alt="Evacuation">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
-                            <span><i class="fas fa-calendar"></i> 23 Januari 2026</span>
+                            <span><i class="fas fa-calendar"></i> January 23, 2026</span>
                         </div>
-                        <h3>BPBD Evakuasi 150 Warga Terdampak Banjir</h3>
-                        <p>BPBD DKI Jakarta berhasil mengevakuasi 150 warga dari wilayah Jakarta Utara yang terendam banjir...</p>
-                        <button class="btn-read-more" onclick="openModal(4)">Baca Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                        <h3>BPBD Evacuates 150 Flood-Affected Residents</h3>
+                        <p>BPBD DKI Jakarta successfully evacuated 150 residents from North Jakarta affected by flooding...</p>
+                        <button class="btn-read-more" onclick="openModal(4)">Read More <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
                 <!-- News Card 4 -->
                 <div class="news-card" data-category="tips" data-id="5">
-                    <div class="news-badge badge-tips">Tips & Edukasi</div>
+                    <div class="news-badge badge-tips">Tips & Education</div>
                     <div class="news-image">
-                        <img src="../img/berita5.png" alt="Pencegahan">
+                        <img src="../img/berita5.png" alt="Prevention">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
-                            <span><i class="fas fa-calendar"></i> 22 Januari 2026</span>
+                            <span><i class="fas fa-calendar"></i> January 22, 2026</span>
                         </div>
-                        <h3>Cara Mencegah Banjir di Lingkungan Anda</h3>
-                        <p>Partisipasi masyarakat sangat penting dalam mencegah banjir. Berikut beberapa cara yang bisa dilakukan...</p>
-                        <button class="btn-read-more" onclick="openModal(5)">Baca Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                        <h3>How to Prevent Floods in Your Area</h3>
+                        <p>Public participation is crucial in preventing floods. Here are some ways you can help...</p>
+                        <button class="btn-read-more" onclick="openModal(5)">Read More <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
                 <!-- News Card 5 -->
                 <div class="news-card" data-category="update" data-id="6">
-                    <div class="news-badge badge-update">Update Cuaca</div>
+                    <div class="news-badge badge-update">Weather Update</div>
                     <div class="news-image">
-                        <img src="../img/berita6.png" alt="Status Banjir">
+                        <img src="../img/berita6.png" alt="Flood Status">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
-                            <span><i class="fas fa-calendar"></i> 21 Januari 2026</span>
+                            <span><i class="fas fa-calendar"></i> January 21, 2026</span>
                         </div>
-                        <h3>Status Siaga 2 di 5 Wilayah Jakarta</h3>
-                        <p>BPBD menetapkan status siaga 2 di lima wilayah Jakarta yang berpotensi mengalami banjir...</p>
-                        <button class="btn-read-more" onclick="openModal(6)">Baca Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                        <h3>Alert Level 2 in 5 Jakarta Regions</h3>
+                        <p>BPBD establishes alert level 2 in five Jakarta regions potentially experiencing flooding...</p>
+                        <button class="btn-read-more" onclick="openModal(6)">Read More <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -308,31 +308,31 @@ $title = "Berita Banjir - FloodGuard Jakarta";
     <!-- Emergency Contact Section -->
     <section class="emergency-section">
         <div class="container">
-            <h2 class="section-title">Kontak Darurat Banjir</h2>
+            <h2 class="section-title">Flood Emergency Contacts</h2>
             <div class="emergency-grid">
                 <div class="emergency-card">
                     <i class="fas fa-phone-alt"></i>
-                    <h4>Posko Banjir Jakarta</h4>
+                    <h4>Jakarta Flood Post</h4>
                     <a href="tel:112" class="emergency-number">112</a>
-                    <p>Layanan 24 jam</p>
+                    <p>24-hour service</p>
                 </div>
                 <div class="emergency-card">
                     <i class="fas fa-hospital"></i>
                     <h4>BPBD DKI Jakarta</h4>
                     <a href="tel:021-6560777" class="emergency-number">021-6560777</a>
-                    <p>Badan Penanggulangan Bencana</p>
+                    <p>Disaster Management Agency</p>
                 </div>
                 <div class="emergency-card">
                     <i class="fas fa-ambulance"></i>
-                    <h4>Ambulans</h4>
+                    <h4>Ambulance</h4>
                     <a href="tel:118" class="emergency-number">118</a>
                     <p>Emergency Medical Service</p>
                 </div>
                 <div class="emergency-card">
                     <i class="fas fa-fire-extinguisher"></i>
-                    <h4>Pemadam Kebakaran</h4>
+                    <h4>Fire Department</h4>
                     <a href="tel:113" class="emergency-number">113</a>
-                    <p>Dinas Pemadam & Penyelamatan</p>
+                    <p>Fire & Rescue Service</p>
                 </div>
             </div>
         </div>
@@ -341,45 +341,45 @@ $title = "Berita Banjir - FloodGuard Jakarta";
     <!-- Tips Section -->
     <section class="tips-section">
         <div class="container">
-            <h2 class="section-title">Tips Menghadapi Banjir</h2>
+            <h2 class="section-title">Flood Response Tips</h2>
             <div class="tips-grid">
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <h4>Sebelum Banjir</h4>
+                    <h4>Before Floods</h4>
                     <ul>
-                        <li>Pantau informasi cuaca dari BMKG</li>
-                        <li>Siapkan tas darurat berisi dokumen penting</li>
-                        <li>Matikan aliran listrik dan gas</li>
-                        <li>Pindahkan barang berharga ke tempat tinggi</li>
-                        <li>Simpan makanan dan air bersih</li>
+                        <li>Monitor weather information from BMKG</li>
+                        <li>Prepare emergency bag with important documents</li>
+                        <li>Turn off electricity and gas supply</li>
+                        <li>Move valuables to higher ground</li>
+                        <li>Store food and clean water</li>
                     </ul>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-water"></i>
                     </div>
-                    <h4>Saat Banjir</h4>
+                    <h4>During Floods</h4>
                     <ul>
-                        <li>Tetap tenang dan jangan panik</li>
-                        <li>Hindari berjalan di air banjir yang dalam</li>
-                        <li>Jauhi area dengan arus deras</li>
-                        <li>Ikuti instruksi dari petugas</li>
-                        <li>Hubungi nomor darurat jika perlu bantuan</li>
+                        <li>Stay calm and don't panic</li>
+                        <li>Avoid walking in deep floodwater</li>
+                        <li>Stay away from areas with strong currents</li>
+                        <li>Follow instructions from officers</li>
+                        <li>Call emergency numbers if you need help</li>
                     </ul>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-broom"></i>
                     </div>
-                    <h4>Setelah Banjir</h4>
+                    <h4>After Floods</h4>
                     <ul>
-                        <li>Bersihkan rumah dari lumpur dan kotoran</li>
-                        <li>Cek kondisi listrik sebelum dinyalakan</li>
-                        <li>Buang makanan yang terkena air banjir</li>
-                        <li>Sterilkan air sebelum digunakan</li>
-                        <li>Waspada penyakit pasca banjir</li>
+                        <li>Clean house from mud and dirt</li>
+                        <li>Check electrical condition before turning on</li>
+                        <li>Discard food exposed to floodwater</li>
+                        <li>Sterilize water before use</li>
+                        <li>Beware of post-flood diseases</li>
                     </ul>
                 </div>
             </div>
@@ -421,7 +421,7 @@ $title = "Berita Banjir - FloodGuard Jakarta";
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-shield-alt"></i> FloodGuard Jakarta</h3>
-                    <p>Sistem prediksi banjir berbasis AI untuk melindungi Jakarta.</p>
+                    <p>AI-based flood prediction system to protect Jakarta.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -431,29 +431,24 @@ $title = "Berita Banjir - FloodGuard Jakarta";
                 </div>
                 <div class="footer-col">
                     <h4>Menu</h4>
-                    <ul class="nav-menu">
-                        <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Beranda</a></li>
-                        <li><a href="about.php">Tentang</a></li>
-                        <li><a href="prediksi.php">Prediksi Banjir</a></li>
-                        <li><a href="peta.php">Peta Rawan Banjir</a></li>
-                        <li><a href="berita.php">Berita</a></li>
-                        <?php if(isset($_SESSION['user_id'])): ?>
-                            <li><a href="dashboard.php"><i class="fas fa-user-circle"></i> Dashboard</a></li>
-                        <?php else: ?>
-                            <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                        <?php endif; ?>
+                    <ul>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="prediksi.php">Prediction</a></li>
+                        <li><a href="peta.php">Map</a></li>
+                        <li><a href="berita.php">News</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Kontak Darurat</h4>
+                    <h4>Emergency Contacts</h4>
                     <ul>
                         <li><i class="fas fa-phone"></i> BPBD DKI: 021-6560777</li>
-                        <li><i class="fas fa-phone"></i> Posko Banjir: 112</li>
+                        <li><i class="fas fa-phone"></i> Flood Post: 112</i>
                         <li><i class="fas fa-envelope"></i> info@floodguard.id</li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Didukung Oleh</h4>
+                    <h4>Supported By</h4>
                     <div class="partner-logos">
                         <img src="img/coris.png" alt="CORIS" class="partner-logo">
                         <img src="img/klabat.png" alt="Klabat" class="partner-logo">
@@ -462,7 +457,7 @@ $title = "Berita Banjir - FloodGuard Jakarta";
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FloodGuard Jakarta. Dikembangkan untuk PROX x CORIS 2026.</p>
+                <p>&copy; 2026 FloodGuard Jakarta. Developed for PROX x CORIS 2026.</p>
             </div>
         </div>
     </footer>
@@ -493,349 +488,349 @@ $title = "Berita Banjir - FloodGuard Jakarta";
         // Full Article Content Database
         const articles = {
             1: {
-                title: "BMKG: Waspada Hujan Lebat di Jakarta Hari Ini",
-                date: "26 Januari 2026, 14:30 WIB",
-                image: "img/gambar1.png",
+                title: "BMKG: Heavy Rain Alert in Jakarta Today",
+                date: "January 26, 2026, 2:30 PM WIB",
+                image: "img/berita1.jpg",
                 content: `
-                    <img src="../img/berita1.jpg" alt="Peringatan BMKG">
+                    <img src="../img/berita1.jpg" alt="BMKG Warning">
                     
-                    <p><strong>Jakarta</strong> - Badan Meteorologi, Klimatologi, dan Geofisika (BMKG) mengeluarkan peringatan dini cuaca ekstrem untuk wilayah DKI Jakarta dan sekitarnya pada hari ini, Minggu 26 Januari 2026. Intensitas hujan diprediksi mencapai kategori sedang hingga lebat dengan potensi disertai petir dan angin kencang.</p>
+                    <p><strong>Jakarta</strong> - The Meteorology, Climatology, and Geophysics Agency (BMKG) issued an early warning for extreme weather in the DKI Jakarta area today, Sunday, January 26, 2026. Rain intensity is predicted to reach moderate to heavy category with potential for thunderstorms and strong winds.</p>
 
-                    <p>Kepala BMKG Wilayah Jakarta, Dr. Ahmad Zakir, menjelaskan bahwa kondisi ini dipicu oleh pertumbuhan awan konvektif yang masif di sekitar wilayah Jakarta. "Kami mengimbau seluruh masyarakat Jakarta untuk tetap waspada, terutama di daerah-daerah yang rawan genangan dan banjir," ujarnya dalam konferensi pers di kantor BMKG Jakarta Pusat.</p>
+                    <p>Head of BMKG Jakarta Region, Dr. Ahmad Zakir, explained that this condition is triggered by massive convective cloud growth around Jakarta. "We urge all Jakarta residents to remain vigilant, especially in flood-prone areas," he said at a press conference at the Central Jakarta BMKG office.</p>
 
-                    <h3>Detail Peringatan Cuaca</h3>
-                    <p>Menurut data dari BMKG, curah hujan diprediksi mencapai 50-100 mm dalam 24 jam dengan puncak intensitas antara pukul 14.00 hingga 18.00 WIB. Wilayah yang perlu diwaspadai meliputi:</p>
+                    <h3>Weather Warning Details</h3>
+                    <p>According to BMKG data, rainfall is predicted to reach 50-100 mm within 24 hours with peak intensity between 2:00 PM to 6:00 PM WIB. Areas that need attention include:</p>
                     <ul>
-                        <li>Jakarta Utara: Kelapa Gading, Tanjung Priok, Penjaringan</li>
-                        <li>Jakarta Timur: Cawang, Kampung Melayu, Cipinang Melayu</li>
-                        <li>Jakarta Barat: Kalideres, Cengkareng, Tambora</li>
-                        <li>Jakarta Selatan: Kebayoran Lama, Cilandak</li>
-                        <li>Jakarta Pusat: Kemayoran, Sawah Besar</li>
+                        <li>North Jakarta: Kelapa Gading, Tanjung Priok, Penjaringan</li>
+                        <li>East Jakarta: Cawang, Kampung Melayu, Cipinang Melayu</li>
+                        <li>West Jakarta: Kalideres, Cengkareng, Tambora</li>
+                        <li>South Jakarta: Kebayoran Lama, Cilandak</li>
+                        <li>Central Jakarta: Kemayoran, Sawah Besar</li>
                     </ul>
 
-                    <h3>Imbauan BPBD DKI Jakarta</h3>
-                    <p>Menanggapi peringatan dari BMKG, Badan Penanggulangan Bencana Daerah (BPBD) DKI Jakarta telah mengaktifkan seluruh posko siaga banjir di 44 titik strategis. Kepala Pelaksana BPBD DKI Jakarta, Isnawa Adji, memastikan bahwa semua personel dan peralatan evakuasi telah disiapkan.</p>
+                    <h3>BPBD DKI Jakarta Appeal</h3>
+                    <p>Responding to BMKG's warning, the Jakarta Regional Disaster Management Agency (BPBD) has activated all flood alert posts at 44 strategic points. Head of BPBD DKI Jakarta, Isnawa Adji, ensured that all personnel and evacuation equipment have been prepared.</p>
 
-                    <p>"Kami telah mengerahkan 200 personel gabungan dari BPBD, TNI, Polri, dan relawan di seluruh Jakarta. Pompa air portable dan perahu karet juga sudah stand-by di lokasi-lokasi rawan banjir," jelasnya.</p>
+                    <p>"We have deployed 200 joint personnel from BPBD, TNI, Police, and volunteers throughout Jakarta. Portable water pumps and rubber boats are also on standby at flood-prone locations," he explained.</p>
 
-                    <h3>Antisipasi Masyarakat</h3>
-                    <p>BMKG dan BPBD mengimbau masyarakat untuk melakukan langkah-langkah antisipasi berikut:</p>
+                    <h3>Public Preparedness</h3>
+                    <p>BMKG and BPBD advise the public to take the following precautionary measures:</p>
                     <ul>
-                        <li>Memantau perkembangan cuaca secara berkala melalui aplikasi resmi BMKG atau situs bmkg.go.id</li>
-                        <li>Menghindari aktivitas outdoor yang tidak mendesak</li>
-                        <li>Menyiapkan perlengkapan darurat seperti senter, obat-obatan, dan dokumen penting</li>
-                        <li>Mematikan peralatan elektronik dan mencabut stop kontak jika air mulai naik</li>
-                        <li>Mengikuti arahan dari petugas jika diminta untuk evakuasi</li>
+                        <li>Monitor weather developments regularly through the official BMKG app or bmkg.go.id website</li>
+                        <li>Avoid non-urgent outdoor activities</li>
+                        <li>Prepare emergency supplies such as flashlights, medicines, and important documents</li>
+                        <li>Turn off electronic devices and unplug outlets if water starts rising</li>
+                        <li>Follow instructions from officers if asked to evacuate</li>
                     </ul>
 
-                    <p>Untuk informasi lebih lanjut dan laporan kondisi terkini, masyarakat dapat menghubungi Posko Banjir Jakarta di nomor 112 atau BPBD DKI Jakarta di 021-6560777 (24 jam).</p>
+                    <p>For more information and current condition reports, the public can contact Jakarta Flood Post at 112 or BPBD DKI Jakarta at 021-6560777 (24 hours).</p>
 
-                    <p><em>Artikel ini akan terus diperbarui sesuai dengan perkembangan situasi terkini.</em></p>
+                    <p><em>This article will be continuously updated according to current situation developments.</em></p>
                 `
             },
             2: {
-                title: "Prediksi Cuaca: Hujan Sedang Selama Seminggu",
-                date: "25 Januari 2026",
-                image: "img/gambar2.png",
+                title: "Weather Forecast: Moderate Rain for a Week",
+                date: "January 25, 2026",
+                image: "img/berita2.jpg",
                 content: `
-                    <img src="img/gambar2.png" alt="Prediksi Cuaca Jakarta">
+                    <img src="../img/berita2.jpg" alt="Jakarta Weather Forecast">
                     
-                    <p><strong>Jakarta</strong> - BMKG memprediksi curah hujan dengan intensitas sedang akan berlangsung selama seminggu ke depan di wilayah Jakarta dan sekitarnya. Prediksi ini berdasarkan analisis pola cuaca dan pergerakan massa udara di wilayah Indonesia bagian barat.</p>
+                    <p><strong>Jakarta</strong> - BMKG predicts moderate rainfall intensity will last for the next week in Jakarta and surrounding areas. This forecast is based on weather pattern analysis and air mass movement in western Indonesia.</p>
 
-                    <h3>Analisis Meteorologi</h3>
-                    <p>Menurut Deputi Bidang Meteorologi BMKG, fenomena La Niña yang masih berlangsung turut berkontribusi pada intensitas curah hujan yang lebih tinggi dari normal. Suhu permukaan laut di sekitar Indonesia yang lebih dingin memicu pembentukan awan hujan yang lebih aktif.</p>
+                    <h3>Meteorological Analysis</h3>
+                    <p>According to BMKG's Deputy for Meteorology, the ongoing La Niña phenomenon contributes to higher-than-normal rainfall intensity. Cooler sea surface temperatures around Indonesia trigger more active rain cloud formation.</p>
 
-                    <p>"Kami memperkirakan curah hujan harian berkisar antara 20-50 mm dengan puncak pada sore hingga malam hari. Masyarakat diimbau untuk tetap waspada terutama di daerah dataran rendah," jelas pihak BMKG.</p>
+                    <p>"We estimate daily rainfall ranging from 20-50 mm with peaks in the afternoon to evening. The public is advised to remain vigilant, especially in lowland areas," BMKG explained.</p>
 
-                    <h3>Prediksi per Hari</h3>
+                    <h3>Daily Forecast</h3>
                     <ul>
-                        <li><strong>Senin, 27 Januari:</strong> Hujan sedang, 30-40 mm</li>
-                        <li><strong>Selasa, 28 Januari:</strong> Hujan ringan-sedang, 20-35 mm</li>
-                        <li><strong>Rabu, 29 Januari:</strong> Hujan sedang-lebat, 40-50 mm</li>
-                        <li><strong>Kamis, 30 Januari:</strong> Hujan sedang, 25-40 mm</li>
-                        <li><strong>Jumat, 31 Januari:</strong> Hujan ringan-sedang, 20-30 mm</li>
-                        <li><strong>Sabtu, 1 Februari:</strong> Hujan ringan, 15-25 mm</li>
-                        <li><strong>Minggu, 2 Februari:</strong> Berawan, kemungkinan hujan ringan</li>
+                        <li><strong>Monday, January 27:</strong> Moderate rain, 30-40 mm</li>
+                        <li><strong>Tuesday, January 28:</strong> Light to moderate rain, 20-35 mm</li>
+                        <li><strong>Wednesday, January 29:</strong> Moderate to heavy rain, 40-50 mm</li>
+                        <li><strong>Thursday, January 30:</strong> Moderate rain, 25-40 mm</li>
+                        <li><strong>Friday, January 31:</strong> Light to moderate rain, 20-30 mm</li>
+                        <li><strong>Saturday, February 1:</strong> Light rain, 15-25 mm</li>
+                        <li><strong>Sunday, February 2:</strong> Cloudy, possible light rain</li>
                     </ul>
 
-                    <h3>Dampak dan Mitigasi</h3>
-                    <p>BPBD DKI Jakarta telah mempersiapkan langkah mitigasi dengan melakukan normalisasi saluran air, pemeriksaan pompa air, dan pembersihan gorong-gorong di 1.200 titik strategis. Tim gabungan juga telah disiagakan untuk mengantisipasi genangan dan banjir lokal.</p>
+                    <h3>Impact and Mitigation</h3>
+                    <p>BPBD DKI Jakarta has prepared mitigation steps by normalizing waterways, checking water pumps, and cleaning gutters at 1,200 strategic points. Joint teams have also been alerted to anticipate puddles and local flooding.</p>
 
-                    <p>Masyarakat diminta untuk tidak membuang sampah sembarangan dan memastikan saluran air di sekitar rumah tetap lancar. Informasi cuaca terkini dapat dipantau melalui aplikasi Info BMKG atau website resmi BMKG.</p>
+                    <p>The public is asked not to litter and ensure water channels around their homes remain clear. Current weather information can be monitored through the Info BMKG app or official BMKG website.</p>
                 `
             },
             3: {
-                title: "7 Langkah Menghadapi Banjir di Rumah",
-                date: "24 Januari 2026",
-                image: "img/gambar3.png",
+                title: "7 Steps to Face Floods at Home",
+                date: "January 24, 2026",
+                image: "img/berita3.png",
                 content: `
-                    <img src="img/gambar3.png" alt="Tips Menghadapi Banjir">
+                    <img src="../img/berita3.png" alt="Flood Response Tips">
                     
-                    <p><strong>Jakarta</strong> - Banjir merupakan bencana yang sering melanda Jakarta, terutama saat musim hujan. Untuk itu, penting bagi setiap keluarga memahami langkah-langkah yang tepat dalam menghadapi banjir di rumah.</p>
+                    <p><strong>Jakarta</strong> - Floods are a disaster that often hits Jakarta, especially during the rainy season. Therefore, it's important for every family to understand the right steps in facing floods at home.</p>
 
-                    <h3>1. Persiapan Sebelum Banjir</h3>
-                    <p>Langkah paling penting adalah persiapan sebelum banjir terjadi. Pastikan Anda memiliki:</p>
+                    <h3>1. Preparation Before Floods</h3>
+                    <p>The most important step is preparation before floods occur. Make sure you have:</p>
                     <ul>
-                        <li>Tas darurat berisi dokumen penting (KTP, Kartu Keluarga, Sertifikat, Polis Asuransi) dalam plastik waterproof</li>
-                        <li>Kotak P3K lengkap dengan obat-obatan rutin</li>
-                        <li>Senter atau lampu emergency dengan baterai cadangan</li>
-                        <li>Persediaan makanan kaleng dan air minum untuk 3-5 hari</li>
-                        <li>Power bank terisi penuh untuk komunikasi</li>
-                        <li>Pakaian ganti dan selimut dalam tas kedap air</li>
+                        <li>Emergency bag containing important documents (ID card, family card, certificates, insurance policies) in waterproof plastic</li>
+                        <li>Complete first aid kit with routine medicines</li>
+                        <li>Flashlight or emergency lamp with spare batteries</li>
+                        <li>Stock of canned food and drinking water for 3-5 days</li>
+                        <li>Fully charged power bank for communication</li>
+                        <li>Change of clothes and blankets in waterproof bag</li>
                     </ul>
 
-                    <h3>2. Pantau Informasi Cuaca</h3>
-                    <p>Selalu pantau prediksi cuaca dari BMKG melalui aplikasi atau website resmi. Jika ada peringatan hujan lebat, segera lakukan persiapan tambahan. Simpan nomor kontak penting seperti BPBD (021-6560777), Posko Banjir (112), dan ambulans (118).</p>
+                    <h3>2. Monitor Weather Information</h3>
+                    <p>Always monitor weather forecasts from BMKG through apps or official websites. If there's a heavy rain warning, immediately make additional preparations. Save important contact numbers such as BPBD (021-6560777), Flood Post (112), and ambulance (118).</p>
 
-                    <h3>3. Amankan Barang Berharga</h3>
-                    <p>Pindahkan barang-barang berharga dan elektronik ke tempat yang lebih tinggi minimal 1 meter dari lantai. Angkat furnitur yang bisa diangkat atau letakkan di atas balok. Untuk barang elektronik besar yang tidak bisa dipindahkan, cabut semua kabel dan tutup dengan plastik tebal.</p>
+                    <h3>3. Secure Valuables</h3>
+                    <p>Move valuables and electronics to higher places at least 1 meter from the floor. Lift furniture that can be lifted or place on blocks. For large electronic items that cannot be moved, unplug all cables and cover with thick plastic.</p>
 
-                    <h3>4. Matikan Instalasi Listrik dan Gas</h3>
-                    <p>Jika air mulai naik, segera matikan MCB listrik utama untuk mencegah korsleting dan kebakaran. Matikan juga katup gas dan pastikan tidak ada api menyala di rumah. Jangan menyalakan kembali listrik sebelum memastikan semua instalasi benar-benar kering.</p>
+                    <h3>4. Turn Off Electricity and Gas Installations</h3>
+                    <p>If water starts rising, immediately turn off the main electrical MCB to prevent short circuits and fires. Also turn off the gas valve and ensure there are no open flames in the house. Don't turn electricity back on before ensuring all installations are completely dry.</p>
 
-                    <h3>5. Evakuasi Diri dan Keluarga</h3>
-                    <p>Jika ketinggian air sudah mencapai lutut orang dewasa atau arus sangat deras, segera evakuasi ke tempat yang lebih tinggi. Ikuti jalur evakuasi yang telah ditentukan. Bawa hanya barang-barang penting dalam tas darurat. Jangan mencoba menyeberangi arus air yang deras.</p>
+                    <h3>5. Evacuate Yourself and Family</h3>
+                    <p>If water height reaches adult knee level or current is very strong, immediately evacuate to higher ground. Follow designated evacuation routes. Bring only essential items in emergency bag. Don't try to cross strong water currents.</p>
 
-                    <h3>6. Jaga Kesehatan</h3>
-                    <p>Air banjir mengandung berbagai kontaminan dan bakteri berbahaya. Hindari kontak langsung dengan air banjir, terutama jika ada luka terbuka. Gunakan sepatu boots dan sarung tangan jika harus melewati air. Jangan mengonsumsi air atau makanan yang terkontaminasi air banjir.</p>
+                    <h3>6. Maintain Health</h3>
+                    <p>Floodwater contains various contaminants and dangerous bacteria. Avoid direct contact with floodwater, especially if there are open wounds. Use boots and gloves if must pass through water. Don't consume water or food contaminated by floodwater.</p>
 
-                    <h3>7. Setelah Banjir Surut</h3>
-                    <p>Setelah air surut, lakukan pembersihan menyeluruh dengan langkah-langkah berikut:</p>
+                    <h3>7. After Flood Recedes</h3>
+                    <p>After water recedes, conduct thorough cleaning with the following steps:</p>
                     <ul>
-                        <li>Dokumentasikan kerusakan dengan foto untuk klaim asuransi</li>
-                        <li>Bersihkan lumpur dan kotoran dengan air bersih dan disinfektan</li>
-                        <li>Keringkan rumah dengan membuka semua jendela dan pintu</li>
-                        <li>Cek kondisi instalasi listrik oleh teknisi sebelum menyalakan</li>
-                        <li>Buang semua makanan yang terkena air banjir</li>
-                        <li>Sterilkan peralatan masak dan minum</li>
-                        <li>Waspada penyakit pasca banjir seperti diare, leptospirosis, dan demam berdarah</li>
+                        <li>Document damage with photos for insurance claims</li>
+                        <li>Clean mud and dirt with clean water and disinfectant</li>
+                        <li>Dry the house by opening all windows and doors</li>
+                        <li>Check electrical installation by technician before turning on</li>
+                        <li>Discard all food exposed to floodwater</li>
+                        <li>Sterilize cooking and drinking utensils</li>
+                        <li>Beware of post-flood diseases such as diarrhea, leptospirosis, and dengue fever</li>
                     </ul>
 
-                    <p><strong>Ingat:</strong> Keselamatan jiwa adalah prioritas utama. Jangan ragu untuk meminta bantuan kepada petugas jika situasi membahayakan.</p>
+                    <p><strong>Remember:</strong> Life safety is the top priority. Don't hesitate to ask for help from officers if the situation is dangerous.</p>
                 `
             },
             4: {
-                title: "BPBD Evakuasi 150 Warga Terdampak Banjir",
-                date: "23 Januari 2026",
-                image: "img/gambar4.png",
+                title: "BPBD Evacuates 150 Flood-Affected Residents",
+                date: "January 23, 2026",
+                image: "img/berita4.png",
                 content: `
-                    <img src="img/gambar4.png" alt="Evakuasi Warga Banjir">
+                    <img src="../img/berita4.png" alt="Resident Evacuation">
                     
-                    <p><strong>Jakarta Utara</strong> - BPBD DKI Jakarta berhasil mengevakuasi 150 warga dari wilayah Jakarta Utara yang terendam banjir sejak Selasa (23/1) dini hari. Banjir terjadi akibat luapan Kali Sunter yang meluap setelah hujan deras mengguyur Jakarta selama 6 jam berturut-turut.</p>
+                    <p><strong>North Jakarta</strong> - BPBD DKI Jakarta successfully evacuated 150 residents from North Jakarta flooded since Tuesday (23/1) early morning. Flooding occurred due to Kali Sunter overflow after heavy rain poured over Jakarta for 6 consecutive hours.</p>
 
-                    <h3>Kronologi Banjir</h3>
-                    <p>Hujan lebat mulai turun sejak pukul 23.00 WIB Senin malam dengan intensitas mencapai 85 mm per jam. Kondisi ini menyebabkan Kali Sunter tidak mampu menampung debit air yang meningkat drastis. Pada pukul 02.30 WIB, air mulai meluap dan menggenangi pemukiman warga di Kelurahan Sunter Agung, Tanjung Priok.</p>
+                    <h3>Flood Chronology</h3>
+                    <p>Heavy rain started falling since 11:00 PM WIB Monday night with intensity reaching 85 mm per hour. This condition caused Kali Sunter unable to accommodate the drastically increased water discharge. At 02:30 AM WIB, water began overflowing and inundating residents' settlements in Sunter Agung Village, Tanjung Priok.</p>
 
-                    <p>"Ketinggian air sempat mencapai 1,5 meter di beberapa titik. Kami langsung mengerahkan tim gabungan untuk proses evakuasi," ujar Kepala Pelaksana BPBD DKI Jakarta, Isnawa Adji, saat dikonfirmasi di Posko Penanganan Banjir.</p>
+                    <p>"Water level reached 1.5 meters at several points. We immediately deployed joint teams for the evacuation process," said Head of BPBD DKI Jakarta Operations, Isnawa Adji, when confirmed at the Flood Response Post.</p>
 
-                    <h3>Proses Evakuasi</h3>
-                    <p>Tim gabungan yang terdiri dari 80 personel BPBD, TNI, Polri, dan relawan dikerahkan dengan menggunakan 12 perahu karet dan 3 truk amfibi. Evakuasi berjalan lancar meskipun kondisi air yang deras dan gelap. Prioritas evakuasi diberikan kepada:</p>
+                    <h3>Evacuation Process</h3>
+                    <p>Joint team consisting of 80 personnel from BPBD, TNI, Police, and volunteers were deployed using 12 rubber boats and 3 amphibious trucks. Evacuation went smoothly despite strong water conditions and darkness. Evacuation priority given to:</p>
                     <ul>
-                        <li>Ibu hamil dan menyusui: 15 orang</li>
-                        <li>Anak-anak dan bayi: 45 orang</li>
-                        <li>Lansia dan penyandang disabilitas: 28 orang</li>
-                        <li>Dewasa sehat: 62 orang</li>
+                        <li>Pregnant and nursing mothers: 15 people</li>
+                        <li>Children and babies: 45 people</li>
+                        <li>Elderly and disabled: 28 people</li>
+                        <li>Healthy adults: 62 people</li>
                     </ul>
 
-                    <h3>Layanan di Posko Pengungsian</h3>
-                    <p>Seluruh pengungsi ditampung di GOR Sunter dengan fasilitas yang memadai. Dinas Sosial DKI Jakarta telah menyiapkan:</p>
+                    <h3>Services at Evacuation Post</h3>
+                    <p>All evacuees are housed at Sunter Sports Hall with adequate facilities. DKI Jakarta Social Service has prepared:</p>
                     <ul>
-                        <li>150 kasur dan selimut</li>
-                        <li>Makanan siap saji 3 kali sehari</li>
-                        <li>Air bersih dan MCK darurat</li>
-                        <li>Posko kesehatan dengan 4 dokter dan 8 perawat</li>
-                        <li>Area bermain anak</li>
-                        <li>Dapur umum</li>
+                        <li>150 mattresses and blankets</li>
+                        <li>Ready-to-eat meals 3 times a day</li>
+                        <li>Clean water and emergency sanitation</li>
+                        <li>Health post with 4 doctors and 8 nurses</li>
+                        <li>Children's play area</li>
+                        <li>Public kitchen</li>
                     </ul>
 
-                    <p>Tim medis dari Puskesmas setempat juga melakukan pemeriksaan kesehatan kepada seluruh pengungsi. "Sebagian besar dalam kondisi sehat, hanya ada beberapa yang mengalami flu dan batuk ringan," kata dr. Anita Sari, koordinator tim medis.</p>
+                    <p>Medical team from local health center also conducted health checks on all evacuees. "Most are in healthy condition, only a few experiencing flu and mild cough," said dr. Anita Sari, medical team coordinator.</p>
 
-                    <h3>Kondisi Terkini</h3>
-                    <p>Hingga berita ini diturunkan pukul 15.00 WIB, ketinggian air di lokasi banjir telah surut menjadi 30-50 cm. BPBD telah mengerahkan 8 pompa air mobile untuk mempercepat proses pengeringan. Diperkirakan warga dapat kembali ke rumah pada Kamis (24/1) sore hari setelah air benar-benar surut.</p>
+                    <h3>Current Conditions</h3>
+                    <p>As of this report at 3:00 PM WIB, water level at flood location has receded to 30-50 cm. BPBD has deployed 8 mobile water pumps to accelerate drying process. Residents are estimated to return home on Thursday (24/1) evening after water completely recedes.</p>
 
-                    <p>BPBD juga menerjunkan tim untuk membantu warga membersihkan rumah dari lumpur dan sampah. "Kami akan dampingi warga hingga situasi benar-benar pulih," tegas Isnawa Adji.</p>
+                    <p>BPBD also deployed teams to help residents clean houses from mud and garbage. "We will accompany residents until the situation fully recovers," Isnawa Adji emphasized.</p>
 
-                    <h3>Kerugian Material</h3>
-                    <p>Berdasarkan data sementara BPBD, kerugian material diperkirakan mencapai Rp 3,2 miliar dengan rincian:</p>
+                    <h3>Material Losses</h3>
+                    <p>Based on preliminary BPBD data, material losses are estimated to reach Rp 3.2 billion with details:</p>
                     <ul>
-                        <li>120 unit rumah terendam dengan kerusakan ringan hingga sedang</li>
-                        <li>45 unit kendaraan (mobil dan motor) terendam</li>
-                        <li>2 warung makan rusak berat</li>
-                        <li>Kerusakan infrastruktur jalan dan saluran air</li>
+                        <li>120 house units flooded with minor to moderate damage</li>
+                        <li>45 vehicle units (cars and motorcycles) flooded</li>
+                        <li>2 food stalls heavily damaged</li>
+                        <li>Road and water channel infrastructure damage</li>
                     </ul>
 
-                    <p>Pemprov DKI Jakarta telah menyatakan akan memberikan bantuan berupa uang tunai dan sembako kepada warga terdampak. Proses pendataan kerugian masih berlangsung untuk memastikan bantuan tepat sasaran.</p>
+                    <p>DKI Jakarta Provincial Government has stated will provide assistance in the form of cash and groceries to affected residents. Loss data collection still ongoing to ensure assistance reaches the right target.</p>
                 `
             },
             5: {
-                title: "Cara Mencegah Banjir di Lingkungan Anda",
-                date: "22 Januari 2026",
-                image: "img/gambar5.png",
+                title: "How to Prevent Floods in Your Area",
+                date: "January 22, 2026",
+                image: "img/berita5.png",
                 content: `
-                    <img src="img/gambar5.png" alt="Pencegahan Banjir">
+                    <img src="../img/berita5.png" alt="Flood Prevention">
                     
-                    <p><strong>Jakarta</strong> - Banjir bukan hanya tanggung jawab pemerintah, tetapi juga memerlukan partisipasi aktif dari seluruh masyarakat. Dengan melakukan langkah-langkah pencegahan yang sederhana, kita dapat mengurangi risiko banjir di lingkungan sekitar.</p>
+                    <p><strong>Jakarta</strong> - Floods are not only the government's responsibility, but also require active participation from all communities. By taking simple preventive steps, we can reduce flood risks in our surrounding environment.</p>
 
-                    <h3>1. Jaga Kebersihan Saluran Air</h3>
-                    <p>Sampah yang menyumbat selokan adalah penyebab utama banjir lokal. Lakukan kerja bakti rutin minimal sebulan sekali untuk membersihkan saluran air di lingkungan RT/RW. Pastikan:</p>
+                    <h3>1. Maintain Water Channel Cleanliness</h3>
+                    <p>Garbage clogging gutters is the main cause of local flooding. Conduct routine community service at least once a month to clean water channels in RT/RW neighborhoods. Ensure:</p>
                     <ul>
-                        <li>Tidak ada sampah plastik, daun, atau ranting yang menyumbat</li>
-                        <li>Selokan tidak dangkal karena endapan lumpur</li>
-                        <li>Tutup saluran dalam kondisi baik</li>
-                        <li>Gorong-gorong tidak tersumbat</li>
+                        <li>No plastic waste, leaves, or twigs blocking</li>
+                        <li>Gutters not shallow due to mud deposits</li>
+                        <li>Channel covers in good condition</li>
+                        <li>Culverts not clogged</li>
                     </ul>
 
-                    <p>"Kami mengajak seluruh warga Jakarta untuk tidak membuang sampah sembarangan. Satu bungkus plastik yang Anda buang ke selokan bisa menyumbat aliran air dan menyebabkan banjir," ujar Kepala Dinas Lingkungan Hidup DKI Jakarta.</p>
+                    <p>"We invite all Jakarta residents not to litter carelessly. One plastic package you throw into the gutter can block water flow and cause flooding," said Head of DKI Jakarta Environmental Service.</p>
 
-                    <h3>2. Buat Sumur Resapan</h3>
-                    <p>Sumur resapan berfungsi menyerap air hujan ke dalam tanah sehingga mengurangi limpasan air ke saluran drainase. Setiap rumah di Jakarta sebaiknya memiliki minimal 1 sumur resapan dengan spesifikasi:</p>
+                    <h3>2. Create Infiltration Wells</h3>
+                    <p>Infiltration wells function to absorb rainwater into the ground thus reducing water runoff to drainage channels. Every house in Jakarta should have at least 1 infiltration well with specifications:</p>
                     <ul>
-                        <li>Kedalaman: 3-5 meter</li>
+                        <li>Depth: 3-5 meters</li>
                         <li>Diameter: 80-100 cm</li>
-                        <li>Jarak dari bangunan: minimal 1 meter</li>
-                        <li>Diisi dengan batu kerikil dan pasir</li>
+                        <li>Distance from building: minimum 1 meter</li>
+                        <li>Filled with gravel and sand</li>
                     </ul>
 
-                    <p>Pemprov DKI Jakarta memberikan insentif berupa pengurangan PBB sebesar 10% bagi warga yang memiliki sumur resapan. Informasi lebih lanjut dapat diakses melalui website jakarta.go.id.</p>
+                    <p>DKI Jakarta Provincial Government provides incentives in the form of 10% property tax reduction for residents who have infiltration wells. Further information can be accessed through jakarta.go.id website.</p>
 
-                    <h3>3. Terapkan Biopori</h3>
-                    <p>Lubang biopori adalah teknologi sederhana untuk meningkatkan daya serap air. Cara membuatnya:</p>
+                    <h3>3. Apply Biopori</h3>
+                    <p>Biopori holes are simple technology to increase water absorption. How to make them:</p>
                     <ul>
-                        <li>Buat lubang dengan diameter 10-30 cm sedalam 80-100 cm</li>
-                        <li>Pasang pipa PVC berlubang (opsional)</li>
-                        <li>Isi dengan sampah organik (daun, sisa sayuran)</li>
-                        <li>Buat 5-10 lubang per 100 m² lahan</li>
+                        <li>Make holes with diameter 10-30 cm depth 80-100 cm</li>
+                        <li>Install perforated PVC pipes (optional)</li>
+                        <li>Fill with organic waste (leaves, vegetable scraps)</li>
+                        <li>Make 5-10 holes per 100 m² land</li>
                     </ul>
 
-                    <p>Selain mencegah banjir, biopori juga menghasilkan kompos alami yang baik untuk tanaman.</p>
+                    <p>Besides preventing floods, biopori also produces natural compost good for plants.</p>
 
-                    <h3>4. Kurangi Lahan Kedap Air</h3>
-                    <p>Semakin banyak lahan tertutup beton dan aspal, semakin sedikit air yang terserap tanah. Solusinya:</p>
+                    <h3>4. Reduce Impermeable Land</h3>
+                    <p>The more land covered by concrete and asphalt, the less water absorbed by soil. Solutions:</p>
                     <ul>
-                        <li>Gunakan paving block berlubang untuk halaman</li>
-                        <li>Buat taman kecil atau area hijau di rumah</li>
-                        <li>Gunakan grass block untuk area parkir</li>
-                        <li>Hindari menutup seluruh halaman dengan keramik</li>
+                        <li>Use perforated paving blocks for yards</li>
+                        <li>Create small gardens or green areas at home</li>
+                        <li>Use grass blocks for parking areas</li>
+                        <li>Avoid covering entire yard with ceramics</li>
                     </ul>
 
-                    <h3>5. Tanam Pohon dan Vegetasi</h3>
-                    <p>Pohon dan tanaman berperan penting dalam menyerap air hujan. Pilih jenis tanaman yang tepat:</p>
+                    <h3>5. Plant Trees and Vegetation</h3>
+                    <p>Trees and plants play important roles in absorbing rainwater. Choose the right types of plants:</p>
                     <ul>
-                        <li>Pohon dengan akar dalam: Trembesi, Mahoni, Beringin</li>
-                        <li>Tanaman penutup tanah: Rumput gajah, Kacang-kacangan</li>
-                        <li>Tanaman hias yang tahan air: Pandan, Lidah Mertua</li>
+                        <li>Trees with deep roots: Trembesi, Mahogany, Banyan</li>
+                        <li>Ground cover plants: Elephant grass, Legumes</li>
+                        <li>Water-resistant ornamental plants: Pandan, Snake Plant</li>
                     </ul>
 
-                    <h3>6. Sistem Pemanenan Air Hujan</h3>
-                    <p>Manfaatkan air hujan dengan membuat sistem penampungan:</p>
+                    <h3>6. Rainwater Harvesting System</h3>
+                    <p>Utilize rainwater by creating storage system:</p>
                     <ul>
-                        <li>Pasang talang air dari atap ke tangki penampung</li>
-                        <li>Gunakan air hujan untuk menyiram tanaman, mencuci kendaraan, atau MCK</li>
-                        <li>Kapasitas tangki disesuaikan dengan luas atap</li>
-                        <li>Pasang filter sederhana untuk menyaring kotoran</li>
+                        <li>Install gutters from roof to storage tank</li>
+                        <li>Use rainwater for watering plants, washing vehicles, or sanitation</li>
+                        <li>Tank capacity adjusted to roof area</li>
+                        <li>Install simple filter to screen dirt</li>
                     </ul>
 
-                    <h3>7. Edukasi dan Kesadaran Kolektif</h3>
-                    <p>Pencegahan banjir memerlukan kesadaran bersama. Lakukan:</p>
+                    <h3>7. Education and Collective Awareness</h3>
+                    <p>Flood prevention requires collective awareness. Do:</p>
                     <ul>
-                        <li>Sosialisasi kepada tetangga tentang bahaya sampah dan pentingnya drainase</li>
-                        <li>Bentuk Tim Siaga Banjir di tingkat RT/RW</li>
-                        <li>Buat group komunikasi untuk koordinasi saat darurat</li>
-                        <li>Ajak anak-anak untuk peduli lingkungan sejak dini</li>
+                        <li>Socialize to neighbors about garbage dangers and drainage importance</li>
+                        <li>Form Flood Alert Team at RT/RW level</li>
+                        <li>Create communication group for emergency coordination</li>
+                        <li>Invite children to care for environment from early age</li>
                     </ul>
 
-                    <h3>Peran Pemerintah</h3>
-                    <p>Pemprov DKI Jakarta terus melakukan upaya pencegahan struktural seperti:</p>
+                    <h3>Government Role</h3>
+                    <p>DKI Jakarta Provincial Government continues structural prevention efforts such as:</p>
                     <ul>
-                        <li>Normalisasi 13 sungai yang melintasi Jakarta</li>
-                        <li>Pembangunan 6 waduk dan situ baru</li>
-                        <li>Instalasi 1.200 pompa air di titik-titik strategis</li>
-                        <li>Pembuatan sumur resapan komunal</li>
-                        <li>Aplikasi Jakarta Kini untuk monitoring banjir real-time</li>
+                        <li>Normalization of 13 rivers crossing Jakarta</li>
+                        <li>Construction of 6 new reservoirs and lakes</li>
+                        <li>Installation of 1,200 water pumps at strategic points</li>
+                        <li>Creation of communal infiltration wells</li>
+                        <li>Jakarta Kini app for real-time flood monitoring</li>
                     </ul>
 
-                    <p>"Namun semua upaya pemerintah tidak akan maksimal tanpa partisipasi masyarakat. Mari kita jaga Jakarta bersama dari banjir," ajak Gubernur DKI Jakarta dalam kampanye #JakartaBebaBanjir.</p>
+                    <p>"However, all government efforts will not be maximum without community participation. Let's protect Jakarta together from floods," invited DKI Jakarta Governor in #FloodFreeJakarta campaign.</p>
 
-                    <p><strong>Kesimpulan:</strong> Pencegahan banjir adalah tanggung jawab bersama. Dengan langkah-langkah sederhana yang konsisten, kita dapat mengurangi risiko banjir dan melindungi lingkungan kita.</p>
+                    <p><strong>Conclusion:</strong> Flood prevention is a shared responsibility. With simple consistent steps, we can reduce flood risks and protect our environment.</p>
                 `
             },
             6: {
-                title: "Status Siaga 2 di 5 Wilayah Jakarta",
-                date: "21 Januari 2026",
-                image: "img/gambar1.png",
+                title: "Alert Level 2 in 5 Jakarta Regions",
+                date: "January 21, 2026",
+                image: "img/berita6.png",
                 content: `
-                    <img src="img/gambar1.png" alt="Status Siaga Banjir">
+                    <img src="../img/berita6.png" alt="Flood Alert Status">
                     
-                    <p><strong>Jakarta</strong> - BPBD DKI Jakarta menetapkan status Siaga 2 (waspada) di lima wilayah Jakarta yang berpotensi mengalami banjir dalam 24-48 jam ke depan. Penetapan status ini berdasarkan analisis prediksi cuaca BMKG dan monitoring ketinggian air sungai.</p>
+                    <p><strong>Jakarta</strong> - BPBD DKI Jakarta established Alert Level 2 (vigilance) in five Jakarta regions potentially experiencing flooding within the next 24-48 hours. This status determination is based on BMKG weather forecast analysis and river water level monitoring.</p>
 
-                    <h3>Wilayah Status Siaga 2</h3>
-                    <p>Lima wilayah yang ditetapkan dalam status Siaga 2 adalah:</p>
+                    <h3>Alert Level 2 Regions</h3>
+                    <p>Five regions established under Alert Level 2 are:</p>
 
-                    <p><strong>1. Jakarta Utara</strong><br>
-                    Ketinggian air di Kali Sunter mencapai 245 cm dari normal 180 cm (Siaga 3: 250 cm, Siaga 1: 300 cm). Wilayah yang perlu waspada: Kelapa Gading, Tanjung Priok, Penjaringan, Koja, Pademangan.</p>
+                    <p><strong>1. North Jakarta</strong><br>
+                    Water level in Kali Sunter reached 245 cm from normal 180 cm (Alert 3: 250 cm, Alert 1: 300 cm). Areas needing vigilance: Kelapa Gading, Tanjung Priok, Penjaringan, Koja, Pademangan.</p>
 
-                    <p><strong>2. Jakarta Timur</strong><br>
-                    Debit air Sungai Ciliwung di Pintu Air Manggarai mencatat 80 m³/detik dari normal 40 m³/detik. Daerah rawan: Cawang, Kampung Melayu, Bukit Duri, Cipinang Melayu, Duren Sawit.</p>
+                    <p><strong>2. East Jakarta</strong><br>
+                    Ciliwung River discharge at Manggarai Water Gate recorded 80 m³/second from normal 40 m³/second. Vulnerable areas: Cawang, Kampung Melayu, Bukit Duri, Cipinang Melayu, Duren Sawit.</p>
 
-                    <p><strong>3. Jakarta Barat</strong><br>
-                    Kali Pesanggrahan di Pos Duga Air Pesanggrahan mencapai ketinggian 215 cm (Siaga 3: 230 cm). Area waspada: Kalideres, Cengkareng, Kembangan, Tambora, Grogol Petamburan.</p>
+                    <p><strong>3. West Jakarta</strong><br>
+                    Kali Pesanggrahan at Pesanggrahan Water Gauge reached 215 cm height (Alert 3: 230 cm). Vigilance areas: Kalideres, Cengkareng, Kembangan, Tambora, Grogol Petamburan.</p>
 
-                    <p><strong>4. Jakarta Selatan</strong><br>
-                    Meskipun relatif aman, beberapa titik di dataran rendah perlu diwaspadai: Kebayoran Lama, Cilandak (dekat Kali Krukut), Jagakarsa, Mampang Prapatan.</p>
+                    <p><strong>4. South Jakarta</strong><br>
+                    Although relatively safe, several points in lowlands need vigilance: Kebayoran Lama, Cilandak (near Kali Krukut), Jagakarsa, Mampang Prapatan.</p>
 
-                    <p><strong>5. Jakarta Pusat</strong><br>
-                    Pintu Air Manggarai sebagai muara Ciliwung mencatat kenaikan signifikan. Daerah rawan: Kemayoran, Sawah Besar, Tanah Abang, Gambir.</p>
+                    <p><strong>5. Central Jakarta</strong><br>
+                    Manggarai Water Gate as Ciliwung estuary recorded significant rise. Vulnerable areas: Kemayoran, Sawah Besar, Tanah Abang, Gambir.</p>
 
-                    <h3>Pengertian Status Siaga</h3>
-                    <p>BPBD DKI Jakarta menerapkan 4 tingkat status siaga banjir:</p>
+                    <h3>Understanding Alert Status</h3>
+                    <p>BPBD DKI Jakarta implements 4 flood alert status levels:</p>
                     <ul>
-                        <li><strong>Siaga 4 (Normal):</strong> Tidak ada ancaman banjir</li>
-                        <li><strong>Siaga 3 (Waspada):</strong> Potensi banjir dalam 3-7 hari</li>
-                        <li><strong>Siaga 2 (Siaga):</strong> Potensi banjir dalam 24-48 jam</li>
-                        <li><strong>Siaga 1 (Awas):</strong> Banjir sudah terjadi atau akan terjadi dalam 6-12 jam</li>
+                        <li><strong>Alert 4 (Normal):</strong> No flood threat</li>
+                        <li><strong>Alert 3 (Vigilance):</strong> Flood potential within 3-7 days</li>
+                        <li><strong>Alert 2 (Alert):</strong> Flood potential within 24-48 hours</li>
+                        <li><strong>Alert 1 (Warning):</strong> Flood occurred or will occur within 6-12 hours</li>
                     </ul>
 
-                    <h3>Langkah Antisipasi BPBD</h3>
-                    <p>Menanggapi penetapan Siaga 2, BPBD telah melakukan langkah-langkah berikut:</p>
+                    <h3>BPBD Anticipation Steps</h3>
+                    <p>Responding to Alert 2 establishment, BPBD has taken the following steps:</p>
                     <ul>
-                        <li>Mengaktifkan 44 posko siaga banjir 24 jam</li>
-                        <li>Mengerahkan 300 personel gabungan ke lokasi rawan</li>
-                        <li>Menyiapkan 25 perahu karet dan 5 truk amfibi</li>
-                        <li>Mengoperasikan 180 pompa air mobile</li>
-                        <li>Membuka 12 titik pengungsian dengan kapasitas 2.000 orang</li>
-                        <li>Koordinasi dengan PLN untuk antisipasi pemadaman darurat</li>
-                        <li>Menyiapkan dapur umum dan logistik bantuan</li>
+                        <li>Activating 44 flood alert posts 24 hours</li>
+                        <li>Deploying 300 joint personnel to vulnerable locations</li>
+                        <li>Preparing 25 rubber boats and 5 amphibious trucks</li>
+                        <li>Operating 180 mobile water pumps</li>
+                        <li>Opening 12 evacuation points with 2,000 people capacity</li>
+                        <li>Coordination with PLN for emergency blackout anticipation</li>
+                        <li>Preparing public kitchen and aid logistics</li>
                     </ul>
 
-                    <h3>Imbauan kepada Masyarakat</h3>
-                    <p>Kepala Pelaksana BPBD DKI Jakarta mengimbau masyarakat di wilayah Siaga 2 untuk:</p>
+                    <h3>Appeal to Public</h3>
+                    <p>Head of BPBD DKI Jakarta Operations appeals to public in Alert 2 regions to:</p>
                     <ul>
-                        <li>Memantau informasi cuaca dan status banjir melalui aplikasi Jakarta Kini atau JAKI</li>
-                        <li>Menyiapkan tas darurat berisi dokumen penting, obat-obatan, dan pakaian ganti</li>
-                        <li>Mengamankan barang berharga dan elektronik ke tempat tinggi</li>
-                        <li>Memastikan jalur evakuasi ke tempat yang lebih tinggi</li>
-                        <li>Menyimpan nomor kontak darurat: BPBD (021-6560777), Posko Banjir (112)</li>
-                        <li>Tidak membuang sampah ke saluran air</li>
-                        <li>Mengikuti arahan petugas jika diminta evakuasi</li>
+                        <li>Monitor weather information and flood status through Jakarta Kini or JAKI app</li>
+                        <li>Prepare emergency bag containing important documents, medicines, and change of clothes</li>
+                        <li>Secure valuables and electronics to high places</li>
+                        <li>Ensure evacuation route to higher places</li>
+                        <li>Save emergency contact numbers: BPBD (021-6560777), Flood Post (112)</li>
+                        <li>Not throw garbage into water channels</li>
+                        <li>Follow officer instructions if asked to evacuate</li>
                     </ul>
 
-                    <h3>Monitoring Real-Time</h3>
-                    <p>Masyarakat dapat memantau kondisi terkini melalui:</p>
+                    <h3>Real-Time Monitoring</h3>
+                    <p>Public can monitor current conditions through:</p>
                     <ul>
                         <li><strong>Website:</strong> banjir.jakarta.go.id</li>
-                        <li><strong>Aplikasi:</strong> Jakarta Kini (Android/iOS)</li>
+                        <li><strong>Application:</strong> Jakarta Kini (Android/iOS)</li>
                         <li><strong>Twitter:</strong> @humasjakarta, @BPBDJakarta</li>
-                        <li><strong>Call Center:</strong> 112 (24 jam)</li>
+                        <li><strong>Call Center:</strong> 112 (24 hours)</li>
                     </ul>
 
-                    <p>Sistem monitoring otomatis BPBD mencatat ketinggian air di 80 titik sungai dan saluran utama secara real-time. Data diperbarui setiap 15 menit dan dapat diakses publik.</p>
+                    <p>BPBD automatic monitoring system records water level at 80 river and main channel points in real-time. Data updated every 15 minutes and publicly accessible.</p>
 
-                    <h3>Prediksi Cuaca</h3>
-                    <p>Menurut BMKG, hujan dengan intensitas sedang-lebat masih berpotensi terjadi hingga 3 hari ke depan. Puncak hujan diperkirakan pada malam hari pukul 18.00-24.00 WIB. Total akumulasi hujan diprediksi mencapai 100-150 mm dalam 72 jam.</p>
+                    <h3>Weather Forecast</h3>
+                    <p>According to BMKG, moderate to heavy rain intensity still potentially occurs for the next 3 days. Rain peak estimated at night 6:00 PM-12:00 AM WIB. Total rain accumulation predicted to reach 100-150 mm within 72 hours.</p>
 
-                    <p>"Kami memohon kesadaran seluruh warga Jakarta untuk bersama-sama menjaga kebersihan saluran air dan tidak membuang sampah sembarangan. Banjir adalah tanggung jawab kita bersama," tegas Kepala Pelaksana BPBD DKI Jakarta.</p>
+                    <p>"We request awareness of all Jakarta residents to together maintain water channel cleanliness and not litter carelessly. Floods are our shared responsibility," emphasized Head of BPBD DKI Jakarta Operations.</p>
 
-                    <p><em>Status Siaga 2 akan dievaluasi setiap 6 jam dan dapat ditingkatkan atau diturunkan sesuai kondisi aktual di lapangan.</em></p>
+                    <p><em>Alert Level 2 status will be evaluated every 6 hours and can be raised or lowered according to actual field conditions.</em></p>
                 `
             }
         };

@@ -1,8 +1,8 @@
 <?php 
-$title = "Prediksi Banjir - FloodGuard Jakarta";
+$title = "Flood Prediction - FloodGuard Jakarta";
 ?>
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +20,11 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                 <span>FloodGuard</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Beranda</a></li>
-                <li><a href="about.php">Tentang</a></li>
-                <li><a href="prediksi.php">Prediksi Banjir</a></li>
-                <li><a href="peta.php">Peta Rawan Banjir</a></li>
-                <li><a href="berita.php">Berita</a></li>
+                <li><a href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? '#' : '../index.php' ?>">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="prediksi.php">Flood Prediction</a></li>
+                <li><a href="peta.php">Flood Risk Map</a></li>
+                <li><a href="berita.php">News</a></li>
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <li><a href="dashboard.php"><i class="fas fa-user-circle"></i> Dashboard</a></li>
                 <?php else: ?>
@@ -40,8 +40,8 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1><i class="fas fa-cloud-rain"></i> Prediksi Banjir Jakarta</h1>
-            <p>Gunakan AI untuk memprediksi kemungkinan banjir berdasarkan kondisi cuaca</p>
+            <h1><i class="fas fa-cloud-rain"></i> Jakarta Flood Prediction</h1>
+            <p>Use AI to predict flood probability based on weather conditions</p>
         </div>
     </section>
 
@@ -52,23 +52,23 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                 <!-- Input Form -->
                 <div class="prediction-form-card">
                     <div class="card-header">
-                        <h2><i class="fas fa-edit"></i> Masukkan Data Cuaca</h2>
-                        <p>Isi data cuaca untuk mendapatkan prediksi banjir</p>
+                        <h2><i class="fas fa-edit"></i> Enter Weather Data</h2>
+                        <p>Input weather data to get flood prediction</p>
                     </div>
 
                     <form id="prediction-form">
-                        <!-- SECTION 1: DATA UTAMA -->
+                        <!-- SECTION 1: MANDATORY DATA -->
                         <div class="form-section">
                             <h3 class="section-subtitle">
-                                <i class="fas fa-exclamation-circle"></i> Data Wajib
+                                <i class="fas fa-exclamation-circle"></i> Mandatory Data
                             </h3>
                             
                             <div class="form-group">
                                 <label for="rainfall">
                                     <i class="fas fa-cloud-showers-heavy"></i>
-                                    Curah Hujan (mm)
+                                    Rainfall (mm)
                                     <span class="required">*</span>
-                                    <span class="info-tooltip" title="Jumlah hujan dalam milimeter. 0-10mm (ringan), 10-50mm (sedang), 50+ mm (lebat)">
+                                    <span class="info-tooltip" title="Amount of rain in millimeters. 0-10mm (light), 10-50mm (moderate), 50+ mm (heavy)">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
                                 </label>
@@ -76,21 +76,21 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                     type="number" 
                                     id="rainfall" 
                                     name="RR" 
-                                    placeholder="Contoh: 25.5"
+                                    placeholder="Example: 25.5"
                                     step="0.1"
                                     min="0"
                                     max="500"
                                     required
                                 >
-                                <small class="hint">Cek aplikasi cuaca atau BMKG</small>
+                                <small class="hint">Check weather app or BMKG</small>
                             </div>
 
                             <div class="form-group">
                                 <label for="humidity">
                                     <i class="fas fa-tint"></i>
-                                    Kelembaban Udara (%)
+                                    Air Humidity (%)
                                     <span class="required">*</span>
-                                    <span class="info-tooltip" title="Persentase kelembaban udara. Normal: 60-80%, Tinggi: 80-95%">
+                                    <span class="info-tooltip" title="Percentage of air humidity. Normal: 60-80%, High: 80-95%">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
                                 </label>
@@ -98,27 +98,27 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                     type="number" 
                                     id="humidity" 
                                     name="RH_avg" 
-                                    placeholder="Contoh: 78"
+                                    placeholder="Example: 78"
                                     step="1"
                                     min="0"
                                     max="100"
                                     required
                                 >
-                                <small class="hint">Biasanya tampil di aplikasi cuaca</small>
+                                <small class="hint">Usually shown in weather apps</small>
                             </div>
                         </div>
 
-                        <!-- SECTION 2: DATA SUHU -->
+                        <!-- SECTION 2: TEMPERATURE DATA -->
                         <div class="form-section">
                             <h3 class="section-subtitle">
-                                <i class="fas fa-thermometer-half"></i> Data Suhu
+                                <i class="fas fa-thermometer-half"></i> Temperature Data
                             </h3>
                             
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="temp-avg">
                                         <i class="fas fa-thermometer-half"></i>
-                                        Suhu Rata-rata (°C)
+                                        Average Temperature (°C)
                                         <span class="required">*</span>
                                     </label>
                                     <input 
@@ -136,7 +136,7 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                 <div class="form-group">
                                     <label for="temp-min">
                                         <i class="fas fa-temperature-low"></i>
-                                        Suhu Minimum (°C)
+                                        Minimum Temperature (°C)
                                         <span class="required">*</span>
                                     </label>
                                     <input 
@@ -154,7 +154,7 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                 <div class="form-group">
                                     <label for="temp-max">
                                         <i class="fas fa-temperature-high"></i>
-                                        Suhu Maximum (°C)
+                                        Maximum Temperature (°C)
                                         <span class="required">*</span>
                                     </label>
                                     <input 
@@ -169,21 +169,21 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                     >
                                 </div>
                             </div>
-                            <small class="hint">Suhu hari ini (pagi/siang/malam)</small>
+                            <small class="hint">Today's temperature (morning/afternoon/evening)</small>
                         </div>
 
-                        <!-- SECTION 3: DATA TAMBAHAN -->
+                        <!-- SECTION 3: ADDITIONAL DATA -->
                         <div class="form-section">
                             <h3 class="section-subtitle">
-                                <i class="fas fa-cloud-sun"></i> Data Cuaca Lainnya
+                                <i class="fas fa-cloud-sun"></i> Other Weather Data
                             </h3>
                             
                             <div class="form-group">
                                 <label for="sunshine">
                                     <i class="fas fa-sun"></i>
-                                    Durasi Sinar Matahari (jam)
+                                    Sunshine Duration (hours)
                                     <span class="required">*</span>
-                                    <span class="info-tooltip" title="Berapa lama matahari bersinar hari ini (0-12 jam)">
+                                    <span class="info-tooltip" title="How long the sun shines today (0-12 hours)">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
                                 </label>
@@ -197,16 +197,16 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                     max="12"
                                     required
                                 >
-                                <small class="hint">Rata-rata 5-8 jam saat cerah</small>
+                                <small class="hint">Average 5-8 hours when clear</small>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="wind-max">
                                         <i class="fas fa-wind"></i>
-                                        Kecepatan Angin Max (m/s)
+                                        Max Wind Speed (m/s)
                                         <span class="required">*</span>
-                                        <span class="info-tooltip" title="Kecepatan angin tertinggi hari ini (1-10 m/s = normal, >10 m/s = kencang)">
+                                        <span class="info-tooltip" title="Highest wind speed today (1-10 m/s = normal, >10 m/s = strong)">
                                             <i class="fas fa-info-circle"></i>
                                         </span>
                                     </label>
@@ -225,7 +225,7 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                 <div class="form-group">
                                     <label for="wind-avg">
                                         <i class="fas fa-wind"></i>
-                                        Kecepatan Angin Rata-rata (m/s)
+                                        Average Wind Speed (m/s)
                                         <span class="required">*</span>
                                     </label>
                                     <input 
@@ -240,16 +240,16 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                                     >
                                 </div>
                             </div>
-                            <small class="hint">Cek di aplikasi cuaca atau BMKG</small>
+                            <small class="hint">Check weather app or BMKG</small>
                         </div>
 
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary btn-lg btn-block" id="predict-btn">
-                                <i class="fas fa-chart-line"></i> Prediksi Sekarang
+                                <i class="fas fa-chart-line"></i> Predict Now
                             </button>
 
                             <button type="button" class="btn btn-secondary btn-block" id="use-current-weather">
-                                <i class="fas fa-map-marker-alt"></i> Isi Otomatis dari Cuaca Saat Ini
+                                <i class="fas fa-map-marker-alt"></i> Auto-fill from Current Weather
                             </button>
 
                             <button type="reset" class="btn-reset">
@@ -262,7 +262,7 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
                 <!-- Result Card -->
                 <div class="prediction-result-card" id="result-card" style="display: none;">
                     <div class="card-header">
-                        <h2><i class="fas fa-chart-pie"></i> Hasil Prediksi</h2>
+                        <h2><i class="fas fa-chart-pie"></i> Prediction Result</h2>
                     </div>
 
                     <div class="result-content" id="result-content">
@@ -271,10 +271,10 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
 
                     <div class="result-actions">
                         <button class="btn btn-secondary" id="reset-form">
-                            <i class="fas fa-redo"></i> Prediksi Lagi
+                            <i class="fas fa-redo"></i> Predict Again
                         </button>
                         <button class="btn btn-primary" id="save-result">
-                            <i class="fas fa-download"></i> Simpan Hasil
+                            <i class="fas fa-download"></i> Save Result
                         </button>
                     </div>
                 </div>
@@ -284,41 +284,41 @@ $title = "Prediksi Banjir - FloodGuard Jakarta";
             <div class="info-cards-grid">
                 <div class="info-card-small">
                     <i class="fas fa-question-circle"></i>
-                    <h4>Cara Menggunakan</h4>
-                    <p>Isi minimal 3 data utama (curah hujan, kelembaban, suhu) untuk prediksi akurat.</p>
+                    <h4>How to Use</h4>
+                    <p>Fill in at least 3 main data (rainfall, humidity, temperature) for accurate prediction.</p>
                 </div>
                 <div class="info-card-small">
                     <i class="fas fa-clock"></i>
-                    <h4>Data Real-Time</h4>
-                    <p>Gunakan tombol "Cuaca Saat Ini" untuk otomatis mengisi data dari BMKG.</p>
+                    <h4>Real-Time Data</h4>
+                    <p>Use "Current Weather" button to auto-fill data from BMKG.</p>
                 </div>
                 <div class="info-card-small">
                     <i class="fas fa-shield-alt"></i>
-                    <h4>Akurasi 88.49%</h4>
-                    <p>Model AI telah dilatih dengan 6,308 data historis dari 4 stasiun BMKG.</p>
+                    <h4>88.49% Accuracy</h4>
+                    <p>AI model trained with 6,308 historical data from 4 BMKG stations.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (sama seperti index.php) -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3><i class="fas fa-shield-alt"></i> FloodGuard Jakarta</h3>
-                    <p>Sistem prediksi banjir berbasis AI untuk melindungi Jakarta.</p>
+                    <p>AI-based flood prediction system to protect Jakarta.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="../index.php">Beranda</a></li>
-                        <li><a href="about.php">Tentang</a></li>
-                        <li><a href="prediksi.php">Prediksi</a></li>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="prediksi.php">Prediction</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Didukung Oleh</h4>
+                    <h4>Supported By</h4>
                     <div class="partner-logos">
                         <img src="img/coris.png" alt="CORIS" class="partner-logo">
                         <img src="img/klabat.png" alt="Klabat" class="partner-logo">
