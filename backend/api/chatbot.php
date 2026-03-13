@@ -174,10 +174,10 @@ try {
         'central jakarta' => 'Central Jakarta has MEDIUM risk, especially near Ciliwung River. Prone areas: Kemayoran, Sawah Besar, Tanah Abang, Gambir.',
         
         // Competition & About
-        'competition' => 'FloodGuard was developed for PROX x CORIS International Competition 2026 in Web Development category with theme "Bridging Gaps: Code for Earth, Intelligence for Justice, and Sustainability for Shaping Tomorrow".',
+        'competition' => 'FloodGuard was developed for PROXO x CORIS International Competition 2026 in Web Development category with theme "Bridging Gaps: Code for Earth, Intelligence for Justice, and Sustainability for Shaping Tomorrow".',
         'developer' => 'FloodGuard developed by Reinhart Jens Robert using tech stack: PHP, Python Flask, JavaScript, Machine Learning (Random Forest), Google Gemini AI, Leaflet.js for maps, and OpenWeatherMap API.',
         'technology' => 'FloodGuard tech stack: Frontend (HTML, CSS, JavaScript, Leaflet.js), Backend (PHP Native, Python Flask), Database (MySQL), AI/ML (Random Forest, Google Gemini), APIs (OpenWeatherMap, BMKG).',
-        'about' => 'FloodGuard is an AI-powered flood prediction platform for Jakarta using machine learning and real-time weather data. Developed for PROX x CORIS 2026 competition to help protect communities from flood disasters.',
+        'about' => 'FloodGuard is an AI-powered flood prediction platform for Jakarta using machine learning and real-time weather data. Developed for PROXO x CORIS 2026 competition to help protect communities from flood disasters.',
         
         // Others
         'news' => 'News page provides latest updates about Jakarta floods, safety tips, and important information from BMKG & BPBD. Articles updated regularly.',

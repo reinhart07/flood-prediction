@@ -457,7 +457,7 @@ $title = "Flood News - FloodGuard Jakarta";
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FloodGuard Jakarta. Developed for PROX x CORIS 2026.</p>
+                <p>&copy; 2026 FloodGuard Jakarta. Developed for PROXO x CORIS 2026.</p>
             </div>
         </div>
     </footer>

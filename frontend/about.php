@@ -54,7 +54,7 @@ $title = "Tentang - FloodGuard Jakarta";
                     <div class="about-text">
                         <h2>What is FloodGuard?</h2>
                         <p>FloodGuard Jakarta is an innovative platform that combines <strong>Artificial Intelligence (AI)</strong> and <strong>Machine Learning</strong> technologies to predict flood potential in Jakarta.</p>
-                        <p>Developed as part of the <strong>PROX x CORIS 2026 International Competition</strong> with the theme <em>"Bridging Gaps: Code for Earth, Intelligence for Justice, and Sustainability for Shaping Tomorrow"</em>, FloodGuard aims to reduce flood disaster impacts through an accurate early warning system.</p>
+                        <p>Developed as part of the <strong>PROXO x CORIS 2026 International Competition</strong> with the theme <em>"Bridging Gaps: Code for Earth, Intelligence for Justice, and Sustainability for Shaping Tomorrow"</em>, FloodGuard aims to reduce flood disaster impacts through an accurate early warning system.</p>
                         <p>By leveraging historical data from BMKG over 5 years (2016-2020) and Random Forest algorithms, our system can predict floods with an accuracy of <strong>88.49%</strong>.</p>
                     </div>
                     <div class="about-image">
@@ -85,7 +85,7 @@ $title = "Tentang - FloodGuard Jakarta";
                     <div class="section-header">
                         <h2>Development Team</h2>
                         <div class="header-line"></div>
-                        <p>Developed with dedication for PROX x CORIS 2026</p>
+                        <p>Developed with dedication for PROXO x CORIS 2026</p>
                     </div>
 
                     <div class="developer-card">
@@ -103,7 +103,7 @@ $title = "Tentang - FloodGuard Jakarta";
                             
                             <div class="developer-bio">
                                 <p>I am a passionate student in the field of technology and web development. 
-                                   FloodGuard Jakarta is a project that I developed for the PROX x CORIS 2026 competition with the aim of utilizing AI technology to help the people of Jakarta mitigate flood disasters.</p>
+                                   FloodGuard Jakarta is a project that I developed for the PROXO x CORIS 2026 competition with the aim of utilizing AI technology to help the people of Jakarta mitigate flood disasters.</p>
                                 
                                 <p>By combining Machine Learning, modern Web Development, and real-time data, I hope FloodGuard can become a useful solution for the wider community.</p>
                             </div>
@@ -375,7 +375,7 @@ $title = "Tentang - FloodGuard Jakarta";
                 <div class="competition-info">
                     <div class="comp-card">
                         <i class="fas fa-trophy"></i>
-                        <h4>PROX x CORIS 2026</h4>
+                        <h4>PROXO x CORIS 2026</h4>
                         <p>International Competition</p>
                     </div>
                     <div class="comp-card">
@@ -471,11 +471,12 @@ $title = "Tentang - FloodGuard Jakarta";
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; © 2026 FloodGuard Jakarta. Developed for PROX x CORIS 2026.</p>
+                <p>&copy; © 2026 FloodGuard Jakarta. Developed for PROXO x CORIS 2026.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    
 </body>
 </html>

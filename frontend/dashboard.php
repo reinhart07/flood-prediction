@@ -1129,7 +1129,7 @@ window.downloadAsPDF = async function() {
                     
                     <div class="footer">
                         <p><strong>FloodGuard Jakarta</strong> - AI-Based Flood Prediction System</p>
-                        <p>Developed for PROX x CORIS 2026</p>
+                        <p>Developed for PROXO x CORIS 2026</p>
                         <p>Document generated automatically on ${new Date().toLocaleString('en-US')}</p>
                     </div>
                 </body>
