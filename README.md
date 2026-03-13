@@ -98,8 +98,8 @@ Flood-prediction/
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/reinhart07/floodguard-jakarta.git
-cd floodguard-jakarta
+git clone https://github.com/reinhart07/flood-prediction.git
+cd floodguard-prediction
 ```
 
 ### Step 2: Database Setup
@@ -146,7 +146,7 @@ Edit `backend/api/config.php`:
 // Database Configuration
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', '');  // Laragon default: empty password
+define('DB_PASS', '');  
 define('DB_NAME', 'floodguard_db');
 
 // API Keys (get your own!)
@@ -353,7 +353,7 @@ python app.py
 ---
 
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -376,6 +376,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Reinhart Jens Robert**
 - GitHub: [@reinhart07](https://github.com/reinhart07)
 - Project: [FloodGuard Jakarta](https://github.com/reinhart07/flood-prediction)
+- Link Website: https://floodpredictions.d45.site/index.php
 
 ---
 
